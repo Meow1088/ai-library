@@ -4,8 +4,8 @@
 
 **Thư viện repo tham khảo cho AI coding agent — tra trước, viết sau.**
 
-![Repos](https://img.shields.io/badge/repos-28-blue)
-![Categories](https://img.shields.io/badge/categories-7-purple)
+![Repos](https://img.shields.io/badge/repos-38-blue)
+![Categories](https://img.shields.io/badge/categories-8-purple)
 ![Clone](https://img.shields.io/badge/clone-‑‑depth%201-green)
 ![Agents](https://img.shields.io/badge/agents-Claude%20Code%20·%20Codex-orange)
 
@@ -47,11 +47,12 @@ Repo này chỉ chứa **cấu trúc** (manifest + script + docs). Các repo tha
 | --- | --- | --- |
 | 🐦 **Flutter** | samples, riverpod, flutter_animate, fl_chart, Best-Flutter-UI-Templates | Dựng UI, state, animation, chart |
 | 🤖 **Android** | nowinandroid, compose-samples | Kiến trúc chuẩn Google, Compose |
-| 🧠 **AI / Agent** | langgraph, langchain, crewAI, autogen, OpenHands | Multi-agent, workflow, tool use |
+| 🧠 **AI / Agent** | langgraph, langchain, claude-cookbooks, browser-use, crawl4ai, OpenHands | Multi-agent, RAG, browser agent, scraping |
 | ⚙️ **Automation** | n8n, activepieces | Workflow tự động, webhook, node |
-| 🐍 **Python** | fastapi, playwright-python | API async, browser automation |
-| 📈 **Trading** | freqtrade, ccxt, vectorbt, backtrader, vnstock | Bot, backtest, kết nối sàn, data VN |
-| 📄 **Office** | markitdown, PyMuPDF, PaddleOCR | PDF, convert tài liệu, OCR |
+| 🐍 **Python** | fastapi, playwright-python, python-telegram-bot | API async, browser automation, bot Telegram |
+| 📈 **Trading** | freqtrade, ccxt, vectorbt, hummingbot, pandas-ta | Bot, backtest, kết nối sàn, indicator |
+| 📄 **Office** | markitdown, PyMuPDF, PaddleOCR, docling | PDF, convert tài liệu, OCR |
+| 🎨 **Content** | ComfyUI | Workflow gen ảnh/video |
 
 Danh mục đầy đủ kèm keyword để grep: **[INDEX.md](INDEX.md)**
 

@@ -14,6 +14,7 @@
 | Android | Kiến trúc | Theo nowinandroid (Compose + Hilt + Room, module hóa) | `Android\nowinandroid` |
 | Python | API | FastAPI async | `Python\fastapi` |
 | Python | Browser/scraping | Playwright | `Python\playwright-python` |
+| Python | Bot Telegram | python-telegram-bot | `Python\python-telegram-bot` |
 | AI agent | Workflow dạng graph | LangGraph | `AI\langgraph` |
 | AI agent | Multi-agent theo vai trò | CrewAI | `AI\crewAI` |
 | Trading | Kết nối sàn | ccxt (API thống nhất) | `Trading\ccxt` |
@@ -21,6 +22,7 @@
 | Office | Đọc PDF | PyMuPDF | `Office\PyMuPDF` |
 | Office | Convert sang Markdown | markitdown | `Office\markitdown` |
 | Office | OCR | PaddleOCR | `Office\PaddleOCR` |
+| Content | Gen ảnh/video workflow | ComfyUI | `Content\ComfyUI` |
 
 ## Coding style
 

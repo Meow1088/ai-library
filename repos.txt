@@ -12,6 +12,7 @@ Flutter|https://github.com/rydmike/flex_color_scheme
 Flutter|https://github.com/rrousselGit/riverpod
 Flutter|https://github.com/imaNNeo/fl_chart
 Flutter|https://github.com/ionicfirebaseapp/getwidget
+Flutter|https://github.com/localsend/localsend
 
 # ---------- Android ----------
 Android|https://github.com/wasabeef/awesome-android-ui
@@ -24,6 +25,10 @@ AI|https://github.com/crewAIInc/crewAI
 AI|https://github.com/microsoft/autogen
 AI|https://github.com/All-Hands-AI/OpenHands
 AI|https://github.com/langchain-ai/langchain
+AI|https://github.com/anthropics/claude-cookbooks
+AI|https://github.com/openai/openai-cookbook
+AI|https://github.com/browser-use/browser-use
+AI|https://github.com/unclecode/crawl4ai
 
 # ---------- Automation ----------
 Automation|https://github.com/n8n-io/n8n
@@ -32,6 +37,7 @@ Automation|https://github.com/activepieces/activepieces
 # ---------- Python ----------
 Python|https://github.com/fastapi/fastapi
 Python|https://github.com/microsoft/playwright-python
+Python|https://github.com/python-telegram-bot/python-telegram-bot
 
 # ---------- Trading ----------
 Trading|https://github.com/freqtrade/freqtrade
@@ -39,8 +45,14 @@ Trading|https://github.com/ccxt/ccxt
 Trading|https://github.com/thinh-vu/vnstock
 Trading|https://github.com/mementum/backtrader
 Trading|https://github.com/polakowo/vectorbt
+Trading|https://github.com/xgboosted/pandas-ta-classic
+Trading|https://github.com/hummingbot/hummingbot
 
 # ---------- Office ----------
 Office|https://github.com/microsoft/markitdown
 Office|https://github.com/pymupdf/PyMuPDF
 Office|https://github.com/PaddlePaddle/PaddleOCR
+Office|https://github.com/docling-project/docling
+
+# ---------- Content (gen ảnh/video — OneShot) ----------
+Content|https://github.com/comfyanonymous/ComfyUI
