@@ -1,0 +1,5 @@
+# Khóa line-ending để script chạy đúng khi chuyển giữa Windows và Linux/VPS
+*.sh  text eol=lf
+*.ps1 text eol=crlf
+*.md  text
+*.txt text
