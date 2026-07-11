@@ -17,6 +17,7 @@ Thư mục này là **thư viện tham khảo**, KHÔNG phải dự án. Không 
 ├── clone.ps1       clone repo còn thiếu theo repos.txt (--depth 1)
 ├── update.ps1      git pull toàn bộ repo đã clone
 ├── INDEX.md        mục lục repo + keyword — TRA FILE NÀY TRƯỚC
+├── CONVENTIONS.md  stack/pattern ưa chuộng — đọc khi bắt đầu code
 └── AGENTS.md       file này
 ```
 
@@ -24,7 +25,7 @@ Thư mục này là **thư viện tham khảo**, KHÔNG phải dự án. Không 
 
 Khi làm việc ở bất kỳ dự án nào mà cần viết tính năng mới:
 
-1. **Đọc `INDEX.md`** — tìm repo/keyword liên quan.
+1. **Đọc `INDEX.md`** — tìm repo/keyword liên quan (bảng "Tra theo nhu cầu" trước). Chọn stack theo `CONVENTIONS.md`.
 2. **Search trong repo liên quan** (grep theo keyword, đọc example/README của repo đó).
 3. Nếu thư viện không có → tra docs chính thức (Context7 nếu có).
 4. Nếu vẫn không có → tự viết.

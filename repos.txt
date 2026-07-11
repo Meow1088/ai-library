@@ -22,12 +22,12 @@ Android|https://github.com/android/compose-samples
 AI|https://github.com/langchain-ai/langgraph
 AI|https://github.com/crewAIInc/crewAI
 AI|https://github.com/microsoft/autogen
-# AI|https://github.com/All-Hands-AI/OpenHands
-# AI|https://github.com/langchain-ai/langchain
+AI|https://github.com/All-Hands-AI/OpenHands
+AI|https://github.com/langchain-ai/langchain
 
 # ---------- Automation ----------
 Automation|https://github.com/n8n-io/n8n
-# Automation|https://github.com/activepieces/activepieces
+Automation|https://github.com/activepieces/activepieces
 
 # ---------- Python ----------
 Python|https://github.com/fastapi/fastapi
@@ -37,10 +37,10 @@ Python|https://github.com/microsoft/playwright-python
 Trading|https://github.com/freqtrade/freqtrade
 Trading|https://github.com/ccxt/ccxt
 Trading|https://github.com/thinh-vu/vnstock
-# Trading|https://github.com/mementum/backtrader
-# Trading|https://github.com/polakowo/vectorbt
+Trading|https://github.com/mementum/backtrader
+Trading|https://github.com/polakowo/vectorbt
 
 # ---------- Office ----------
 Office|https://github.com/microsoft/markitdown
 Office|https://github.com/pymupdf/PyMuPDF
-# Office|https://github.com/PaddlePaddle/PaddleOCR
+Office|https://github.com/PaddlePaddle/PaddleOCR
