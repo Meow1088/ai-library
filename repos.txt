@@ -1,0 +1,46 @@
+# Danh sách repo của AI Library.
+# Format: <Category>|<Git URL>
+# Dòng bắt đầu bằng # sẽ bị bỏ qua. Repo đã tồn tại trên đĩa sẽ được skip.
+# Chạy clone.ps1 để tải về (clone --depth 1 cho nhẹ), update.ps1 để cập nhật.
+
+# ---------- Flutter ----------
+Flutter|https://github.com/Solido/awesome-flutter
+Flutter|https://github.com/flutter/samples
+Flutter|https://github.com/mitesh77/Best-Flutter-UI-Templates
+Flutter|https://github.com/gskinner/flutter_animate
+Flutter|https://github.com/rydmike/flex_color_scheme
+Flutter|https://github.com/rrousselGit/riverpod
+Flutter|https://github.com/imaNNeo/fl_chart
+Flutter|https://github.com/ionicfirebaseapp/getwidget
+
+# ---------- Android ----------
+Android|https://github.com/wasabeef/awesome-android-ui
+Android|https://github.com/android/nowinandroid
+Android|https://github.com/android/compose-samples
+
+# ---------- AI / Agent ----------
+AI|https://github.com/langchain-ai/langgraph
+AI|https://github.com/crewAIInc/crewAI
+AI|https://github.com/microsoft/autogen
+# AI|https://github.com/All-Hands-AI/OpenHands
+# AI|https://github.com/langchain-ai/langchain
+
+# ---------- Automation ----------
+Automation|https://github.com/n8n-io/n8n
+# Automation|https://github.com/activepieces/activepieces
+
+# ---------- Python ----------
+Python|https://github.com/fastapi/fastapi
+Python|https://github.com/microsoft/playwright-python
+
+# ---------- Trading ----------
+Trading|https://github.com/freqtrade/freqtrade
+Trading|https://github.com/ccxt/ccxt
+Trading|https://github.com/thinh-vu/vnstock
+# Trading|https://github.com/mementum/backtrader
+# Trading|https://github.com/polakowo/vectorbt
+
+# ---------- Office ----------
+Office|https://github.com/microsoft/markitdown
+Office|https://github.com/pymupdf/PyMuPDF
+# Office|https://github.com/PaddlePaddle/PaddleOCR

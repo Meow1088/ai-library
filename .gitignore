@@ -1,0 +1,4 @@
+# Git repo này CHỈ chứa cấu trúc + script + tài liệu của thư viện.
+# Toàn bộ repo con (Flutter\, AI\, Trading\...) KHÔNG đưa lên git —
+# máy mới tự tải lại bằng clone.ps1 (Windows) hoặc clone.sh (Linux).
+/*/
