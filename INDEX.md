@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-07-11 — 39 repo / 8 category (38 git + 1 zip), clone --depth 1.
+> Cập nhật: 2026-07-17 — 43 repo / 10 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -10,7 +10,7 @@
 
 | Cần làm gì | Repo | Xem ở đâu |
 |---|---|---|
-| UI màn hình hoàn chỉnh (login, dashboard...) | Best-Flutter-UI-Templates, flutter-ui-screens | root theo tên app mẫu |
+| UI màn hình hoàn chỉnh (login, dashboard...) | Best-Flutter-UI-Templates | root theo tên app mẫu |
 | State management Flutter | riverpod | `examples/` |
 | Animation Flutter | flutter_animate | `example/` |
 | Chart / biểu đồ | fl_chart | `example/` |
@@ -35,6 +35,11 @@
 | App Flutter production thật | localsend | `app/`, `core/` |
 | Parse tài liệu phức tạp (layout, bảng) | docling | `docling/`, `docs/` |
 | Gen ảnh/video workflow | ComfyUI | `comfy/`, `comfy_extras/` |
+| Tra cứu best practice Claude Code (agents, commands, skills, hooks, MCP, workflow) | claude-code-best-practice | `best-practice/`, `implementation/`, `orchestration-workflow/` |
+| PDF ghép/tách/nén nhẹ (Python) | KillerPDF | root |
+| Học cách tự viết lại hệ thống từ đầu (compiler, database, git, docker, redis...) | build-your-own-x | root (README danh mục theo chủ đề, đa ngôn ngữ) |
+| PDF app đầy đủ tính năng (edit, sign, OCR, convert, merge/split, API) | Stirling-PDF | `app/`, `docs/` |
+| TTS tiếng Việt + voice cloning | VieNeu-TTS | `examples/`, `src/` |
 
 ## Flutter
 
@@ -48,7 +53,6 @@
 | riverpod | `Flutter\riverpod` | State management chuẩn — provider, async, codegen; xem `examples/` | state, provider, riverpod, async |
 | fl_chart | `Flutter\fl_chart` | Chart thuần Dart — line, bar, pie, radar; xem `example/` | chart, graph, line, bar, pie |
 | getwidget | `Flutter\getwidget` | Thư viện widget dựng sẵn (button, card, carousel...) | widget, button, card, carousel |
-| flutter-ui-screens | `Flutter\flutter-ui-screens-main` | Bộ screen UI mẫu (bản zip, không update được) | ui, screen, login, onboarding |
 | localsend | `Flutter\localsend` | App production thật (share file cross-platform, Riverpod) — tham khảo kiến trúc app hoàn chỉnh; xem `app/` | production, architecture, riverpod, cross-platform |
 
 ## Android
@@ -72,6 +76,7 @@
 | openai-cookbook | `AI\openai-cookbook` | Recipe chính thức OpenAI API — 260 notebook theo chủ đề; xem `examples/` (lưu ý: repo sparse-checkout, xem ghi chú cuối file) | openai, gpt, recipe, notebook |
 | browser-use | `AI\browser-use` | Agent điều khiển browser bằng LLM (Playwright) — form, click, extract; xem `examples/` | browser agent, playwright, automation, llm |
 | crawl4ai | `AI\crawl4ai` | Crawler tối ưu cho LLM — output markdown sạch, extract có cấu trúc; xem `docs/` | crawl, scraping, markdown, extract |
+| claude-code-best-practice | `AI\claude-code-best-practice` | Tổng hợp best practice Claude Code — agents, commands, skills, hooks, MCP, settings, orchestration (Command→Agent→Skill), so sánh nhiều dev workflow (Superpowers, Spec Kit...); xem `best-practice/`, `implementation/`, `orchestration-workflow/`, `tips/` | claude code, agent, command, skill, hook, mcp, workflow, best practice |
 
 ## Automation
 
@@ -108,12 +113,26 @@
 | PyMuPDF | `Office\PyMuPDF` | Đọc/ghi/render PDF tốc độ cao — extract text, table, ảnh | pdf, extract, render, text |
 | PaddleOCR | `Office\PaddleOCR` | OCR đa ngôn ngữ (có tiếng Việt) — detect + recognize, có MCP server; xem `paddleocr/` | ocr, text detection, vietnamese, recognize |
 | docling | `Office\docling` | Parse tài liệu phức tạp (PDF/DOCX, layout, bảng) ra format AI-ready | pdf, parse, layout, table, docx |
+| KillerPDF | `Office\KillerPDF` | Ghép/tách/nén/xoay PDF gọn nhẹ bằng Python | pdf, merge, split, compress |
+| Stirling-PDF | `Office\Stirling-PDF` | Web app PDF đầy đủ tính năng (edit, merge/split, OCR, convert, sign, watermark, API REST) — self-hosted qua Docker; xem `app/`, `docs/` | pdf, editor, ocr, sign, api, self-hosted, docker |
 
 ## Content
 
 | Repo | Path | Dùng làm gì | Keyword |
 |---|---|---|---|
 | ComfyUI | `Content\ComfyUI` | Workflow engine gen ảnh/video node-based — nền cho OneShot; xem `comfy/`, `comfy_extras/` | image, video, generation, workflow, node |
+
+## Audio
+
+| Repo | Path | Dùng làm gì | Keyword |
+|---|---|---|---|
+| VieNeu-TTS | `Audio\VieNeu-TTS` | TTS tiếng Việt với voice cloning tức thời (vài giây audio mẫu) — chạy on-device, real-time trên CPU, output 24kHz; xem `examples/`, `src/` | tts, text-to-speech, vietnamese, voice cloning, on-device, speech synthesis |
+
+## Reference
+
+| Repo | Path | Dùng làm gì | Keyword |
+|---|---|---|---|
+| build-your-own-x | `Reference\build-your-own-x` | Danh mục tutorial tự viết lại hệ thống thật từ đầu (compiler, database, git, docker, redis, web server, blockchain...) đa ngôn ngữ — tra khi cần hiểu cơ chế bên trong trước khi tự implement | tutorial, from scratch, compiler, database, git, docker, redis, learning |
 
 ## Repo tắt trong repos.txt (bỏ `#` nếu cần rồi chạy clone.ps1/clone.sh)
 
