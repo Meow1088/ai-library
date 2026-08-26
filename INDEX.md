@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-07-17 — 43 repo / 10 category, clone --depth 1.
+> Cập nhật: 2026-08-25 — 43 repo / 10 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -25,7 +25,7 @@
 | OCR (có tiếng Việt) | PaddleOCR | `paddleocr/`, `docs/` |
 | PDF / convert tài liệu | PyMuPDF, markitdown | `docs/`, `packages/` |
 | Workflow automation | n8n, activepieces | `packages/nodes-base/`, `packages/pieces/` |
-| Recipe Claude API (tool use, agent, vision) | claude-cookbooks | `capabilities/`, `claude_agent_sdk/` |
+| Recipe Claude API (tool use, agent, vision, skill, eval, giảm chi phí) | claude-cookbooks | `capabilities/`, `tool_use/`, `claude_agent_sdk/`, `patterns/agents/`, `cost_optimization/`, `skills/` |
 | Recipe OpenAI API | openai-cookbook | `examples/` |
 | Browser agent (LLM điều khiển browser) | browser-use | `examples/`, `browser_use/` |
 | Crawl web ra markdown cho LLM | crawl4ai | `docs/`, `crawl4ai/` |
@@ -72,7 +72,7 @@
 | autogen | `AI\autogen` | Framework multi-agent của Microsoft — conversation, group chat | agent, autogen, conversation, microsoft |
 | OpenHands | `AI\OpenHands` | Coding agent tự hành hoàn chỉnh — sandbox, browser, runtime; xem `openhands/` | coding agent, sandbox, autonomous, runtime |
 | langchain | `AI\langchain` | Framework LLM app — chain, RAG, retriever, integration; xem `libs/langchain/` | llm, rag, chain, retriever, embedding |
-| claude-cookbooks | `AI\claude-cookbooks` | Recipe chính thức Claude API — tool use, agent SDK, vision, extended thinking; xem `capabilities/` | claude, anthropic, tool use, agent sdk, recipe |
+| claude-cookbooks | `AI\claude-cookbooks` | Recipe chính thức Claude API — tool use, agent SDK, vision, extended thinking, **Skills**, **eval**, **cost optimization** (prompt caching / Batch API −50%), **Managed Agents**, 5 pattern agent (chaining, routing, parallel, orchestrator-workers, evaluator-optimizer); xem `capabilities/`, `tool_use/`, `patterns/agents/`, `cost_optimization/`, `skills/`, `managed_agents/` | claude, anthropic, tool use, agent sdk, recipe, skill, eval, prompt cache, batch, classification, rag, citation |
 | openai-cookbook | `AI\openai-cookbook` | Recipe chính thức OpenAI API — 260 notebook theo chủ đề; xem `examples/` (lưu ý: repo sparse-checkout, xem ghi chú cuối file) | openai, gpt, recipe, notebook |
 | browser-use | `AI\browser-use` | Agent điều khiển browser bằng LLM (Playwright) — form, click, extract; xem `examples/` | browser agent, playwright, automation, llm |
 | crawl4ai | `AI\crawl4ai` | Crawler tối ưu cho LLM — output markdown sạch, extract có cấu trúc; xem `docs/` | crawl, scraping, markdown, extract |
