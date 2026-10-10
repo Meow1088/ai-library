@@ -56,6 +56,7 @@ Office|https://github.com/PaddlePaddle/PaddleOCR
 Office|https://github.com/docling-project/docling
 Office|https://github.com/SteveTheKiller/KillerPDF
 Office|https://github.com/Stirling-Tools/Stirling-PDF
+Office|https://github.com/Cuongyd196/cit-pdf
 
 # ---------- Content (gen ảnh/video — OneShot) ----------
 Content|https://github.com/comfyanonymous/ComfyUI

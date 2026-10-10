@@ -39,6 +39,7 @@
 | PDF ghép/tách/nén nhẹ (Python) | KillerPDF | root |
 | Học cách tự viết lại hệ thống từ đầu (compiler, database, git, docker, redis...) | build-your-own-x | root (README danh mục theo chủ đề, đa ngôn ngữ) |
 | PDF app đầy đủ tính năng (edit, sign, OCR, convert, merge/split, API) | Stirling-PDF | `app/`, `docs/` |
+| PDF desktop app (Electron) giao diện tiếng Việt, xử lý offline | cit-pdf | `desktop/src/`, `src/` |
 | TTS tiếng Việt + voice cloning | VieNeu-TTS | `examples/`, `src/` |
 
 ## Flutter
@@ -115,6 +116,7 @@
 | docling | `Office\docling` | Parse tài liệu phức tạp (PDF/DOCX, layout, bảng) ra format AI-ready | pdf, parse, layout, table, docx |
 | KillerPDF | `Office\KillerPDF` | Ghép/tách/nén/xoay PDF gọn nhẹ bằng Python | pdf, merge, split, compress |
 | Stirling-PDF | `Office\Stirling-PDF` | Web app PDF đầy đủ tính năng (edit, merge/split, OCR, convert, sign, watermark, API REST) — self-hosted qua Docker; xem `app/`, `docs/` | pdf, editor, ocr, sign, api, self-hosted, docker |
+| cit-pdf | `Office\cit-pdf` | BentoPDF đóng gói Electron + Việt hoá 100% (merge/split, nén, OCR offline, ký, in) — mẫu Electron an toàn (contextIsolation, IPC) xem `desktop/src/main.ts`; AGPL-3.0 | pdf, electron, desktop, vietnamese, ocr, i18n |
 
 ## Content
 
