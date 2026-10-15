@@ -30,11 +30,19 @@ AI|https://github.com/openai/openai-cookbook
 AI|https://github.com/browser-use/browser-use
 AI|https://github.com/unclecode/crawl4ai
 AI|https://github.com/shanraisshan/claude-code-best-practice
+AI|https://github.com/volcengine/OpenViking
+# ECC — không phải repo tham khảo: chạy install.ps1 từ đây để cài Claude Code
+# theo profile/module thay vì cài plugin full (xem INDEX.md).
+AI|https://github.com/affaan-m/everything-claude-code
 AI|https://github.com/Panniantong/agent-reach
 
 # ---------- Automation ----------
 Automation|https://github.com/n8n-io/n8n
 Automation|https://github.com/activepieces/activepieces
+Automation|https://github.com/dvasquez08/n8n-workflows
+Automation|https://github.com/AmplifyAutomation/n8n-templates
+Automation|https://github.com/abhisiroha/n8n-templates
+Automation|https://github.com/nusquama/n8nworkflows.xyz
 
 # ---------- Python ----------
 Python|https://github.com/fastapi/fastapi
@@ -68,3 +76,6 @@ Audio|https://github.com/pnnbao97/VieNeu-TTS
 # ---------- Reference (danh mục tra cứu tổng quát) ----------
 Reference|https://github.com/codecrafters-io/build-your-own-x
 AI|https://github.com/NousResearch/hermes-agent
+
+# ---------- API ----------
+API|https://github.com/public-apis/public-apis

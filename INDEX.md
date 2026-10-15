@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-09-24 — 45 repo / 10 category, clone --depth 1.
+> Cập nhật: 2026-10-15 — 53 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -41,6 +41,8 @@
 | PDF app đầy đủ tính năng (edit, sign, OCR, convert, merge/split, API) | Stirling-PDF | `app/`, `docs/` |
 | PDF desktop app (Electron) giao diện tiếng Việt, xử lý offline | cit-pdf | `desktop/src/`, `src/` |
 | TTS tiếng Việt + voice cloning | VieNeu-TTS | `examples/`, `src/` |
+| Context DB / memory cho agent (VFS + git versioning) | OpenViking | `crates/ragfs/`, `openviking/retrieve/` |
+| Cài / trim Claude Code (giảm context) | everything-claude-code | `scripts/install-plan.js`, `manifests/` |
 | Cho agent đọc nội dung sau tường đăng nhập (Twitter/Reddit/XHS/LinkedIn) + pattern doctor/probe/skill-router | agent-reach | `agent_reach/probe.py`, `agent_reach/channels/base.py`, `agent_reach/skill/` |
 | Kho skill cho agent (150 skill đóng gói sẵn: devops, finance, research, creative, mlops...) | hermes-agent | `optional-skills/` theo nhóm |
 
@@ -82,6 +84,8 @@
 | claude-code-best-practice | `AI\claude-code-best-practice` | Tổng hợp best practice Claude Code — agents, commands, skills, hooks, MCP, settings, orchestration (Command→Agent→Skill), so sánh nhiều dev workflow (Superpowers, Spec Kit...); xem `best-practice/`, `implementation/`, `orchestration-workflow/`, `tips/` | claude code, agent, command, skill, hook, mcp, workflow, best practice |
 | agent-reach | `AI\agent-reach` | CLI cho agent đọc/search 15 nền tảng (Twitter, Reddit, YouTube, GitHub, Bilibili, 小红书, LinkedIn, RSS, web) — **KHÔNG phải wrapper**: nó chỉ cài tool upstream + `doctor` + SKILL.md dạy agent gọi CLI gốc. Học: probe thật thay vì `which()` (`probe.py`), backend list có thứ tự + fallback (`channels/base.py`), scrub secret ở output boundary (`utils/text.py`), atomic write chmod 600 chống symlink (`config.py`), contract test cho adapter (`tests/test_channel_contracts.py`). Cookie login = rủi ro khoá acc, xem SECURITY.md trước khi dùng thật | agent, cli, scraping, twitter, reddit, youtube, cookie, doctor, health check, probe, fallback, skill, mcp |
 | hermes-agent | `AI\hermes-agent` | Agent tự hành của NousResearch — bản upstream của Hermes đang chạy trên CT102. Giá trị chính: **`optional-skills/` 150 skill viết sẵn** (docker, ast-grep, grill-me, stocks, mlops, creative...) để bốc sang Hermes, và **cách dựng system prompt 3 tầng stable/context/volatile** (`agent/system_prompt.py`) — chỉ mục skill nằm đầu dải volatile để không phá prefix cache. Xem thêm `tools/` (memory frozen-snapshot, skills progressive disclosure) | agent, hermes, skill, system prompt, prompt cache, memory, cron, telegram |
+| OpenViking | `AI\OpenViking` | Context database cho agent (ByteDance/Volcengine). Rust core `crates/ragfs` = VFS thuần (plugin localfs/s3fs/memfs/kvfs/sqlfs/queuefs + git tự cài trên gitoxide + lock + AES-GCM) — **Apache-2.0**, sạch, đáng đọc/mượn. Não (L0/L1/L2, embedding, retrieval) nằm ở Python `openviking/retrieve`, `session`, `storage` — **AGPL-3.0**. Repo 0.4.x, đổi API nhanh. | context db, agent memory, rag, vfs, rust, ragfs, mcp |
+| everything-claude-code (ECC) | `AI\everything-claude-code` | **Không phải repo tham khảo — đây là bộ cài Claude Code.** Chạy `install.ps1` từ đây để cài theo profile/module thay vì bật plugin full (plugin full = 281 skill ≈ 18k token nạp mỗi phiên). Xem plan trước khi cài: `node scripts/install-plan.js --list-profiles` hoặc `--modules <ids>`. Cần `npm install` một lần. | ecc, install, profile, module, context, skill, token |
 
 ## Automation
 
@@ -89,6 +93,7 @@
 |---|---|---|---|
 | n8n | `Automation\n8n` | Workflow automation self-host — node, trigger, webhook; tham khảo khi làm Ai-bao-gia | workflow, automation, webhook, node |
 | activepieces | `Automation\activepieces` | Workflow automation TypeScript — connector (pieces) dễ đọc; xem `packages/pieces/` | workflow, pieces, connector, typescript |
+| n8n-workflows, n8n-templates (×2), n8nworkflows.xyz | `Automation\...` | Kho workflow n8n mẫu (JSON) để import/tham khảo | n8n, workflow, template, json |
 
 ## Python
 
@@ -139,6 +144,12 @@
 | Repo | Path | Dùng làm gì | Keyword |
 |---|---|---|---|
 | build-your-own-x | `Reference\build-your-own-x` | Danh mục tutorial tự viết lại hệ thống thật từ đầu (compiler, database, git, docker, redis, web server, blockchain...) đa ngôn ngữ — tra khi cần hiểu cơ chế bên trong trước khi tự implement | tutorial, from scratch, compiler, database, git, docker, redis, learning |
+
+## API
+
+| Repo | Path | Dùng làm gì | Keyword |
+|---|---|---|---|
+| public-apis | `API\public-apis` | Danh mục API public miễn phí theo chủ đề | api, public, free, list |
 
 ## Repo tắt trong repos.txt (bỏ `#` nếu cần rồi chạy clone.ps1/clone.sh)
 
