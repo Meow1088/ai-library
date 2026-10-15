@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-08-25 — 43 repo / 10 category, clone --depth 1.
+> Cập nhật: 2026-09-24 — 45 repo / 10 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -41,6 +41,8 @@
 | PDF app đầy đủ tính năng (edit, sign, OCR, convert, merge/split, API) | Stirling-PDF | `app/`, `docs/` |
 | PDF desktop app (Electron) giao diện tiếng Việt, xử lý offline | cit-pdf | `desktop/src/`, `src/` |
 | TTS tiếng Việt + voice cloning | VieNeu-TTS | `examples/`, `src/` |
+| Cho agent đọc nội dung sau tường đăng nhập (Twitter/Reddit/XHS/LinkedIn) + pattern doctor/probe/skill-router | agent-reach | `agent_reach/probe.py`, `agent_reach/channels/base.py`, `agent_reach/skill/` |
+| Kho skill cho agent (150 skill đóng gói sẵn: devops, finance, research, creative, mlops...) | hermes-agent | `optional-skills/` theo nhóm |
 
 ## Flutter
 
@@ -78,6 +80,8 @@
 | browser-use | `AI\browser-use` | Agent điều khiển browser bằng LLM (Playwright) — form, click, extract; xem `examples/` | browser agent, playwright, automation, llm |
 | crawl4ai | `AI\crawl4ai` | Crawler tối ưu cho LLM — output markdown sạch, extract có cấu trúc; xem `docs/` | crawl, scraping, markdown, extract |
 | claude-code-best-practice | `AI\claude-code-best-practice` | Tổng hợp best practice Claude Code — agents, commands, skills, hooks, MCP, settings, orchestration (Command→Agent→Skill), so sánh nhiều dev workflow (Superpowers, Spec Kit...); xem `best-practice/`, `implementation/`, `orchestration-workflow/`, `tips/` | claude code, agent, command, skill, hook, mcp, workflow, best practice |
+| agent-reach | `AI\agent-reach` | CLI cho agent đọc/search 15 nền tảng (Twitter, Reddit, YouTube, GitHub, Bilibili, 小红书, LinkedIn, RSS, web) — **KHÔNG phải wrapper**: nó chỉ cài tool upstream + `doctor` + SKILL.md dạy agent gọi CLI gốc. Học: probe thật thay vì `which()` (`probe.py`), backend list có thứ tự + fallback (`channels/base.py`), scrub secret ở output boundary (`utils/text.py`), atomic write chmod 600 chống symlink (`config.py`), contract test cho adapter (`tests/test_channel_contracts.py`). Cookie login = rủi ro khoá acc, xem SECURITY.md trước khi dùng thật | agent, cli, scraping, twitter, reddit, youtube, cookie, doctor, health check, probe, fallback, skill, mcp |
+| hermes-agent | `AI\hermes-agent` | Agent tự hành của NousResearch — bản upstream của Hermes đang chạy trên CT102. Giá trị chính: **`optional-skills/` 150 skill viết sẵn** (docker, ast-grep, grill-me, stocks, mlops, creative...) để bốc sang Hermes, và **cách dựng system prompt 3 tầng stable/context/volatile** (`agent/system_prompt.py`) — chỉ mục skill nằm đầu dải volatile để không phá prefix cache. Xem thêm `tools/` (memory frozen-snapshot, skills progressive disclosure) | agent, hermes, skill, system prompt, prompt cache, memory, cron, telegram |
 
 ## Automation
 

@@ -30,6 +30,7 @@ AI|https://github.com/openai/openai-cookbook
 AI|https://github.com/browser-use/browser-use
 AI|https://github.com/unclecode/crawl4ai
 AI|https://github.com/shanraisshan/claude-code-best-practice
+AI|https://github.com/Panniantong/agent-reach
 
 # ---------- Automation ----------
 Automation|https://github.com/n8n-io/n8n
@@ -66,3 +67,4 @@ Audio|https://github.com/pnnbao97/VieNeu-TTS
 
 # ---------- Reference (danh mục tra cứu tổng quát) ----------
 Reference|https://github.com/codecrafters-io/build-your-own-x
+AI|https://github.com/NousResearch/hermes-agent
