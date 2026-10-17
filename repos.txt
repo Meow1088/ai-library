@@ -57,6 +57,7 @@ Trading|https://github.com/mementum/backtrader
 Trading|https://github.com/polakowo/vectorbt
 Trading|https://github.com/xgboosted/pandas-ta-classic
 Trading|https://github.com/hummingbot/hummingbot
+Trading|https://github.com/Drakkar-Software/OctoBot
 
 # ---------- Office ----------
 Office|https://github.com/microsoft/markitdown

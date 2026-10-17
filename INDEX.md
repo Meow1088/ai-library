@@ -114,6 +114,7 @@
 | vectorbt | `Trading\vectorbt` | Backtest vectorized (pandas/numba) — quét tham số nhanh, portfolio; xem `examples/` | backtest, vectorized, portfolio, numba |
 | pandas-ta-classic | `Trading\pandas-ta-classic` | 250+ indicator kỹ thuật trên pandas (continuation của pandas-ta gốc đã gỡ) | indicator, rsi, macd, ta, pandas |
 | hummingbot | `Trading\hummingbot` | Bot market-making/arbitrage production-grade — connector sàn, strategy | market making, arbitrage, connector, strategy |
+| OctoBot | `Trading\OctoBot` | Bot trading crypto có Web UI — monorepo `packages/` (trading, evaluators, backtesting, tentacles = plugin strategy/indicator); có connector Polymarket (ký EIP712, neg-risk) ở `packages/tentacles/Trading/Exchange/polymarket`; app GPL-3.0, tentacles LGPL-3.0 | bot, crypto, web ui, tentacles, grid, dca, polymarket |
 
 ## Office
 
