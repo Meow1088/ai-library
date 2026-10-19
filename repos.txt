@@ -70,6 +70,7 @@ Office|https://github.com/Cuongyd196/cit-pdf
 
 # ---------- Content (gen ảnh/video — OneShot) ----------
 Content|https://github.com/comfyanonymous/ComfyUI
+Content|https://github.com/Meow1088/code-showreel
 
 # ---------- Audio (TTS / speech) ----------
 Audio|https://github.com/pnnbao97/VieNeu-TTS

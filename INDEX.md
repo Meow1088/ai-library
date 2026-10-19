@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-10-15 — 53 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-10-19 — 54 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -35,6 +35,7 @@
 | App Flutter production thật | localsend | `app/`, `core/` |
 | Parse tài liệu phức tạp (layout, bảng) | docling | `docling/`, `docs/` |
 | Gen ảnh/video workflow | ComfyUI | `comfy/`, `comfy_extras/` |
+| Dựng video/intro bằng code (không AI gen) + nhạc tổng hợp + QA gate | code-showreel | `render.py`, `music.py`, `check.py`, `.claude/skills/code-showreel/` |
 | Tra cứu best practice Claude Code (agents, commands, skills, hooks, MCP, workflow) | claude-code-best-practice | `best-practice/`, `implementation/`, `orchestration-workflow/` |
 | PDF ghép/tách/nén nhẹ (Python) | KillerPDF | root |
 | Học cách tự viết lại hệ thống từ đầu (compiler, database, git, docker, redis...) | build-your-own-x | root (README danh mục theo chủ đề, đa ngôn ngữ) |
@@ -133,6 +134,7 @@
 | Repo | Path | Dùng làm gì | Keyword |
 |---|---|---|---|
 | ComfyUI | `Content\ComfyUI` | Workflow engine gen ảnh/video node-based — nền cho OneShot; xem `comfy/`, `comfy_extras/` | image, video, generation, workflow, node |
+| code-showreel | `Content\code-showreel` | Video 12s dựng 100% bằng code (numpy + pillow + ffmpeg): starfield, wireframe 3D, bình minh biển, title + HUD; nhạc tổng hợp bằng numpy; `check.py` kiểm keyframe/frame đen/nháy; kèm skill Claude Code quy trình duyệt khung → render → QA | video, intro, showreel, procedural, ffmpeg, numpy, synth, audio, skill |
 
 ## Audio
 
