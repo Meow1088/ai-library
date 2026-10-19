@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-10-19 — 54 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-10-19 — 55 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -36,6 +36,7 @@
 | Parse tài liệu phức tạp (layout, bảng) | docling | `docling/`, `docs/` |
 | Gen ảnh/video workflow | ComfyUI | `comfy/`, `comfy_extras/` |
 | Dựng video/intro bằng code (không AI gen) + nhạc tổng hợp + QA gate | code-showreel | `render.py`, `music.py`, `check.py`, `.claude/skills/code-showreel/` |
+| Giới hạn chi tiêu / policy engine cho agent hoặc bot (kiểm ngoài LLM) | automaton | `src/agent/policy-rules/`, `src/types.ts` |
 | Tra cứu best practice Claude Code (agents, commands, skills, hooks, MCP, workflow) | claude-code-best-practice | `best-practice/`, `implementation/`, `orchestration-workflow/` |
 | PDF ghép/tách/nén nhẹ (Python) | KillerPDF | root |
 | Học cách tự viết lại hệ thống từ đầu (compiler, database, git, docker, redis...) | build-your-own-x | root (README danh mục theo chủ đề, đa ngôn ngữ) |
@@ -87,6 +88,7 @@
 | hermes-agent | `AI\hermes-agent` | Agent tự hành của NousResearch — bản upstream của Hermes đang chạy trên CT102. Giá trị chính: **`optional-skills/` 150 skill viết sẵn** (docker, ast-grep, grill-me, stocks, mlops, creative...) để bốc sang Hermes, và **cách dựng system prompt 3 tầng stable/context/volatile** (`agent/system_prompt.py`) — chỉ mục skill nằm đầu dải volatile để không phá prefix cache. Xem thêm `tools/` (memory frozen-snapshot, skills progressive disclosure) | agent, hermes, skill, system prompt, prompt cache, memory, cron, telegram |
 | OpenViking | `AI\OpenViking` | Context database cho agent (ByteDance/Volcengine). Rust core `crates/ragfs` = VFS thuần (plugin localfs/s3fs/memfs/kvfs/sqlfs/queuefs + git tự cài trên gitoxide + lock + AES-GCM) — **Apache-2.0**, sạch, đáng đọc/mượn. Não (L0/L1/L2, embedding, retrieval) nằm ở Python `openviking/retrieve`, `session`, `storage` — **AGPL-3.0**. Repo 0.4.x, đổi API nhanh. | context db, agent memory, rag, vfs, rust, ragfs, mcp |
 | everything-claude-code (ECC) | `AI\everything-claude-code` | **Không phải repo tham khảo — đây là bộ cài Claude Code.** Chạy `install.ps1` từ đây để cài theo profile/module thay vì bật plugin full (plugin full = 281 skill ≈ 18k token nạp mỗi phiên). Xem plan trước khi cài: `node scripts/install-plan.js --list-profiles` hoặc `--modules <ids>`. Cần `npm install` một lần. | ecc, install, profile, module, context, skill, token |
+| automaton | `AI\automaton` | Runtime TypeScript cho agent tự hành có ví (Conway Research): ReAct + heartbeat + SOUL.md, tự sửa code, sinh agent con. **"AI tự kiếm tiền" chỉ là prompt, không có cơ chế thu tiền.** Đáng học: treasury policy kiểm ngoài LLM (`src/types.ts` `DEFAULT_TREASURY_POLICY`), policy rule mỗi file (`src/agent/policy-rules/`), loop detector (`src/agent/loop-detector.ts`), hạ model theo ngân sách (`src/inference/router.ts`), memory nhiều lớp (`src/memory/`). Phân tích đầy đủ: `00.Claude\04.Docs\automaton-research.md`. Chỉ chạy thử trong CT cô lập, ví vài USD | agent, autonomous, policy engine, spend limit, treasury, loop detector, memory, x402, wallet, survival |
 
 ## Automation
 
