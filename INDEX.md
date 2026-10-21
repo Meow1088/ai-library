@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-10-19 — 55 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-10-21 — 58 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -89,6 +89,8 @@
 | OpenViking | `AI\OpenViking` | Context database cho agent (ByteDance/Volcengine). Rust core `crates/ragfs` = VFS thuần (plugin localfs/s3fs/memfs/kvfs/sqlfs/queuefs + git tự cài trên gitoxide + lock + AES-GCM) — **Apache-2.0**, sạch, đáng đọc/mượn. Não (L0/L1/L2, embedding, retrieval) nằm ở Python `openviking/retrieve`, `session`, `storage` — **AGPL-3.0**. Repo 0.4.x, đổi API nhanh. | context db, agent memory, rag, vfs, rust, ragfs, mcp |
 | everything-claude-code (ECC) | `AI\everything-claude-code` | **Không phải repo tham khảo — đây là bộ cài Claude Code.** Chạy `install.ps1` từ đây để cài theo profile/module thay vì bật plugin full (plugin full = 281 skill ≈ 18k token nạp mỗi phiên). Xem plan trước khi cài: `node scripts/install-plan.js --list-profiles` hoặc `--modules <ids>`. Cần `npm install` một lần. | ecc, install, profile, module, context, skill, token |
 | automaton | `AI\automaton` | Runtime TypeScript cho agent tự hành có ví (Conway Research): ReAct + heartbeat + SOUL.md, tự sửa code, sinh agent con. **"AI tự kiếm tiền" chỉ là prompt, không có cơ chế thu tiền.** Đáng học: treasury policy kiểm ngoài LLM (`src/types.ts` `DEFAULT_TREASURY_POLICY`), policy rule mỗi file (`src/agent/policy-rules/`), loop detector (`src/agent/loop-detector.ts`), hạ model theo ngân sách (`src/inference/router.ts`), memory nhiều lớp (`src/memory/`). Phân tích đầy đủ: `00.Claude\04.Docs\automaton-research.md`. Chỉ chạy thử trong CT cô lập, ví vài USD | agent, autonomous, policy engine, spend limit, treasury, loop detector, memory, x402, wallet, survival |
+| knowledge-work-plugins | `AI\knowledge-work-plugins` | Plugin chính chủ Anthropic cho Claude Cowork/Claude Code theo nghề (finance, legal, sales, data, productivity, HR...) — mỗi plugin gói skill + connector + slash command + sub-agent; mẫu chuẩn để tự viết plugin/skill. **Apache-2.0** | plugin, skill, cowork, claude code, connector, finance, legal |
+| Windows-MCP | `AI\Windows-MCP` | MCP server cho computer use trên Windows 10/11 (Python ≥3.14, MIT): điều khiển app qua UI Automation (`src/uia`, `src/tree`), PowerShell, registry, filesystem, process | mcp, windows, computer use, uia, automation, desktop |
 
 ## Automation
 
@@ -97,6 +99,7 @@
 | n8n | `Automation\n8n` | Workflow automation self-host — node, trigger, webhook; tham khảo khi làm Ai-bao-gia | workflow, automation, webhook, node |
 | activepieces | `Automation\activepieces` | Workflow automation TypeScript — connector (pieces) dễ đọc; xem `packages/pieces/` | workflow, pieces, connector, typescript |
 | n8n-workflows, n8n-templates (×2), n8nworkflows.xyz | `Automation\...` | Kho workflow n8n mẫu (JSON) để import/tham khảo | n8n, workflow, template, json |
+| snmp-topo-lan-card | `Automation\snmp-topo-lan-card` | Card Home Assistant Lovelace vẽ sơ đồ LAN (ISP → pfSense → switch → cổng) từ SNMP Switch Manager, flow theo băng thông thật; 1 file `snmp-topo-lan-card.js`, MIT | home assistant, snmp, lan, topology, pfsense, switch, lovelace |
 
 ## Python
 

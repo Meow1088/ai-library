@@ -36,6 +36,8 @@ AI|https://github.com/volcengine/OpenViking
 AI|https://github.com/affaan-m/everything-claude-code
 AI|https://github.com/Panniantong/agent-reach
 AI|https://github.com/conway-research/automaton
+AI|https://github.com/anthropics/knowledge-work-plugins
+AI|https://github.com/CursorTouch/Windows-MCP
 
 # ---------- Automation ----------
 Automation|https://github.com/n8n-io/n8n
@@ -44,6 +46,7 @@ Automation|https://github.com/dvasquez08/n8n-workflows
 Automation|https://github.com/AmplifyAutomation/n8n-templates
 Automation|https://github.com/abhisiroha/n8n-templates
 Automation|https://github.com/nusquama/n8nworkflows.xyz
+Automation|https://github.com/doanlong1412/snmp-topo-lan-card
 
 # ---------- Python ----------
 Python|https://github.com/fastapi/fastapi
