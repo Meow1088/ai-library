@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-10-21 — 58 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-10-25 — 60 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
