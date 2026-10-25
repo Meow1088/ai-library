@@ -46,6 +46,7 @@
 | Context DB / memory cho agent (VFS + git versioning) | OpenViking | `crates/ragfs/`, `openviking/retrieve/` |
 | Cài / trim Claude Code (giảm context) | everything-claude-code | `scripts/install-plan.js`, `manifests/` |
 | Cho agent đọc nội dung sau tường đăng nhập (Twitter/Reddit/XHS/LinkedIn) + pattern doctor/probe/skill-router | agent-reach | `agent_reach/probe.py`, `agent_reach/channels/base.py`, `agent_reach/skill/` |
+| Vẽ diagram HTML tương tác (architecture/sequence/ERD/workflow…) hoặc trang explainer từ mô tả / repo code | archify | `archify/SKILL.md`, `archify/schemas/`, `archify/examples/` |
 | Kho skill cho agent (150 skill đóng gói sẵn: devops, finance, research, creative, mlops...) | hermes-agent | `optional-skills/` theo nhóm |
 
 ## Flutter
@@ -91,6 +92,7 @@
 | automaton | `AI\automaton` | Runtime TypeScript cho agent tự hành có ví (Conway Research): ReAct + heartbeat + SOUL.md, tự sửa code, sinh agent con. **"AI tự kiếm tiền" chỉ là prompt, không có cơ chế thu tiền.** Đáng học: treasury policy kiểm ngoài LLM (`src/types.ts` `DEFAULT_TREASURY_POLICY`), policy rule mỗi file (`src/agent/policy-rules/`), loop detector (`src/agent/loop-detector.ts`), hạ model theo ngân sách (`src/inference/router.ts`), memory nhiều lớp (`src/memory/`). Phân tích đầy đủ: `00.Claude\04.Docs\automaton-research.md`. Chỉ chạy thử trong CT cô lập, ví vài USD | agent, autonomous, policy engine, spend limit, treasury, loop detector, memory, x402, wallet, survival |
 | knowledge-work-plugins | `AI\knowledge-work-plugins` | Plugin chính chủ Anthropic cho Claude Cowork/Claude Code theo nghề (finance, legal, sales, data, productivity, HR...) — mỗi plugin gói skill + connector + slash command + sub-agent; mẫu chuẩn để tự viết plugin/skill. **Apache-2.0** | plugin, skill, cowork, claude code, connector, finance, legal |
 | Windows-MCP | `AI\Windows-MCP` | MCP server cho computer use trên Windows 10/11 (Python ≥3.14, MIT): điều khiển app qua UI Automation (`src/uia`, `src/tree`), PowerShell, registry, filesystem, process | mcp, windows, computer use, uia, automation, desktop |
+| archify | `AI\archify` | Agent skill vẽ diagram (Apache-2.0, v3.2): agent viết **JSON-IR** theo schema → `archify/bin/archify.mjs finalize` render ra 1 file HTML standalone tương tác (10 loại: architecture, workflow, sequence, dataflow, lifecycle, erd, class, tree, timeline, waterfall + explainer 1 trang). Node ≥18 thuần, **không cần npm install**; gate validate→deliver→check→browser-check (dùng Chrome máy). Test laptop 25/10: `doctor` OK, `finalize` sequence pass ~12s. Có update-check gọi `tt-a1i.github.io` — tắt bằng env `ARCHIFY_UPDATE_CHECK_DISABLED=1`. Đáng học: LLM viết IR có schema thay vì vẽ SVG trực tiếp, validator sinh sẵn, atomic delivery giữ bản tốt cuối (`bin/finalize.mjs`) | diagram, architecture, sequence, erd, mermaid, html, skill, visualization, explainer, json schema |
 
 ## Automation
 

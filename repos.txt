@@ -38,6 +38,7 @@ AI|https://github.com/Panniantong/agent-reach
 AI|https://github.com/conway-research/automaton
 AI|https://github.com/anthropics/knowledge-work-plugins
 AI|https://github.com/CursorTouch/Windows-MCP
+AI|https://github.com/tt-a1i/archify
 
 # ---------- Automation ----------
 Automation|https://github.com/n8n-io/n8n
