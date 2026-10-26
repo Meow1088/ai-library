@@ -48,6 +48,7 @@ Automation|https://github.com/AmplifyAutomation/n8n-templates
 Automation|https://github.com/abhisiroha/n8n-templates
 Automation|https://github.com/nusquama/n8nworkflows.xyz
 Automation|https://github.com/doanlong1412/snmp-topo-lan-card
+Automation|https://github.com/tailscale-dev/ScaleTail
 
 # ---------- Python ----------
 Python|https://github.com/fastapi/fastapi

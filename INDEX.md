@@ -49,6 +49,7 @@
 | Vẽ diagram HTML tương tác (architecture/sequence/ERD/workflow…) hoặc trang explainer từ mô tả / repo code | archify | `archify/SKILL.md`, `archify/schemas/`, `archify/examples/` |
 | Pháp lý/thuế công ty một người VN, chuyển HKD lên công ty, bảng hiệu lực văn bản | opc-vn-business-law | `references/00-legal-status.md`, `references/06-conversion-playbook.md`, `assets/` |
 | Kho skill cho agent (150 skill đóng gói sẵn: devops, finance, research, creative, mlops...) | hermes-agent | `optional-skills/` theo nhóm |
+| Dựng app self-host sau Tailscale (sidecar, HTTPS MagicDNS, không bind IP tailnet cứng) | ScaleTail | `templates/service-template/`, `services/<app>/compose.yaml`, `documentation/standard-setup.md` |
 
 ## Flutter
 
@@ -104,6 +105,7 @@
 | activepieces | `Automation\activepieces` | Workflow automation TypeScript — connector (pieces) dễ đọc; xem `packages/pieces/` | workflow, pieces, connector, typescript |
 | n8n-workflows, n8n-templates (×2), n8nworkflows.xyz | `Automation\...` | Kho workflow n8n mẫu (JSON) để import/tham khảo | n8n, workflow, template, json |
 | snmp-topo-lan-card | `Automation\snmp-topo-lan-card` | Card Home Assistant Lovelace vẽ sơ đồ LAN (ISP → pfSense → switch → cổng) từ SNMP Switch Manager, flow theo băng thông thật; 1 file `snmp-topo-lan-card.js`, MIT | home assistant, snmp, lan, topology, pfsense, switch, lovelace |
+| ScaleTail | `Automation\ScaleTail` | 134 stack Docker Compose self-host (immich, vaultwarden, paperless, uptime-kuma, ntfy, open-webui…), mỗi app 1 sidecar Tailscale riêng: node tailnet + HTTPS qua `TS_SERVE_CONFIG`, app `network_mode: service:tailscale`, không mở cổng LAN, Funnel tắt. Chỉ tham khảo, KHÔNG cài; lưu ý image `tailscale:latest` không ghim, `TZ` mặc định Amsterdam, MIT | tailscale, sidecar, docker compose, self-host, homelab, magicdns, serve, funnel |
 
 ## Python
 
