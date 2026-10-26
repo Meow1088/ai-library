@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-10-25 — 60 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-10-26 — 61 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -47,6 +47,7 @@
 | Cài / trim Claude Code (giảm context) | everything-claude-code | `scripts/install-plan.js`, `manifests/` |
 | Cho agent đọc nội dung sau tường đăng nhập (Twitter/Reddit/XHS/LinkedIn) + pattern doctor/probe/skill-router | agent-reach | `agent_reach/probe.py`, `agent_reach/channels/base.py`, `agent_reach/skill/` |
 | Vẽ diagram HTML tương tác (architecture/sequence/ERD/workflow…) hoặc trang explainer từ mô tả / repo code | archify | `archify/SKILL.md`, `archify/schemas/`, `archify/examples/` |
+| Pháp lý/thuế công ty một người VN, chuyển HKD lên công ty, bảng hiệu lực văn bản | opc-vn-business-law | `references/00-legal-status.md`, `references/06-conversion-playbook.md`, `assets/` |
 | Kho skill cho agent (150 skill đóng gói sẵn: devops, finance, research, creative, mlops...) | hermes-agent | `optional-skills/` theo nhóm |
 
 ## Flutter
@@ -92,6 +93,7 @@
 | automaton | `AI\automaton` | Runtime TypeScript cho agent tự hành có ví (Conway Research): ReAct + heartbeat + SOUL.md, tự sửa code, sinh agent con. **"AI tự kiếm tiền" chỉ là prompt, không có cơ chế thu tiền.** Đáng học: treasury policy kiểm ngoài LLM (`src/types.ts` `DEFAULT_TREASURY_POLICY`), policy rule mỗi file (`src/agent/policy-rules/`), loop detector (`src/agent/loop-detector.ts`), hạ model theo ngân sách (`src/inference/router.ts`), memory nhiều lớp (`src/memory/`). Phân tích đầy đủ: `00.Claude\04.Docs\automaton-research.md`. Chỉ chạy thử trong CT cô lập, ví vài USD | agent, autonomous, policy engine, spend limit, treasury, loop detector, memory, x402, wallet, survival |
 | knowledge-work-plugins | `AI\knowledge-work-plugins` | Plugin chính chủ Anthropic cho Claude Cowork/Claude Code theo nghề (finance, legal, sales, data, productivity, HR...) — mỗi plugin gói skill + connector + slash command + sub-agent; mẫu chuẩn để tự viết plugin/skill. **Apache-2.0** | plugin, skill, cowork, claude code, connector, finance, legal |
 | Windows-MCP | `AI\Windows-MCP` | MCP server cho computer use trên Windows 10/11 (Python ≥3.14, MIT): điều khiển app qua UI Automation (`src/uia`, `src/tree`), PowerShell, registry, filesystem, process | mcp, windows, computer use, uia, automation, desktop |
+| opc-vn-business-law | `AI\opc-vn-business-law` | Skill tham khảo pháp lý–thuế–kế toán cho công ty một người VN (Diginno, CC-BY-4.0 + script MIT, mốc 17/10/2026): chọn mô hình HKD/DNTN/TNHH MTV, checklist chuyển HKD lên công ty, Chủ tịch công ty (Đ85 LDN), kế toán trưởng (NĐ174/TT58/2026), dự thảo Luật DNNVV 2026 Đ20 k8. Đáng học: **bảng trạng thái hiệu lực văn bản** (`references/00-legal-status.md`) làm cổng trước khi trích dẫn. **KHÔNG cài làm skill** (description "BẮT BUỘC dùng" quá rộng). Lỗi soát 26/10: còn hướng dẫn lệ phí môn bài + thuế khoán (NQ 198/2025 đã bỏ từ 01/01/2026 — cần đối chiếu), thiếu miễn TNDN 3 năm DN mới; ví dụ 8 tỷ dùng 20% trong khi bảng ghi 17%; `so_sanh_thue.py:chuan_hoa_ty_le` nhập `--ty-le 1` (1%) bị báo lỗi | pháp lý, thuế, kế toán, tnhh mtv, hộ kinh doanh, chuyển đổi, kế toán trưởng, dnnvv, skill, vietnam |
 | archify | `AI\archify` | Agent skill vẽ diagram (Apache-2.0, v3.2): agent viết **JSON-IR** theo schema → `archify/bin/archify.mjs finalize` render ra 1 file HTML standalone tương tác (10 loại: architecture, workflow, sequence, dataflow, lifecycle, erd, class, tree, timeline, waterfall + explainer 1 trang). Node ≥18 thuần, **không cần npm install**; gate validate→deliver→check→browser-check (dùng Chrome máy). Test laptop 25/10: `doctor` OK, `finalize` sequence pass ~12s. Có update-check gọi `tt-a1i.github.io` — tắt bằng env `ARCHIFY_UPDATE_CHECK_DISABLED=1`. Đáng học: LLM viết IR có schema thay vì vẽ SVG trực tiếp, validator sinh sẵn, atomic delivery giữ bản tốt cuối (`bin/finalize.mjs`) | diagram, architecture, sequence, erd, mermaid, html, skill, visualization, explainer, json schema |
 
 ## Automation

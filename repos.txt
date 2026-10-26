@@ -86,3 +86,4 @@ AI|https://github.com/NousResearch/hermes-agent
 
 # ---------- API ----------
 API|https://github.com/public-apis/public-apis
+AI|https://github.com/diginno-net/opc-vn-business-law
