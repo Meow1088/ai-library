@@ -40,6 +40,7 @@ AI|https://github.com/anthropics/knowledge-work-plugins
 AI|https://github.com/CursorTouch/Windows-MCP
 AI|https://github.com/tt-a1i/archify
 AI|https://github.com/imshaikot/browsentic
+AI|https://github.com/khanh020905/my-office
 
 # ---------- Automation ----------
 Automation|https://github.com/n8n-io/n8n
