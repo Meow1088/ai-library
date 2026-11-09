@@ -85,8 +85,11 @@ Audio|https://github.com/pnnbao97/VieNeu-TTS
 
 # ---------- Reference (danh mục tra cứu tổng quát) ----------
 Reference|https://github.com/codecrafters-io/build-your-own-x
+Reference|https://github.com/Renhuai123/ziwei-doushu
 AI|https://github.com/NousResearch/hermes-agent
 
 # ---------- API ----------
 API|https://github.com/public-apis/public-apis
 AI|https://github.com/diginno-net/opc-vn-business-law
+AI|https://github.com/colbymchenry/codegraph
+AI|https://github.com/Graphify-Labs/graphify

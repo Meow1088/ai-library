@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-10-26 — 61 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-11-09 — 67 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -40,6 +40,7 @@
 | Tra cứu best practice Claude Code (agents, commands, skills, hooks, MCP, workflow) | claude-code-best-practice | `best-practice/`, `implementation/`, `orchestration-workflow/` |
 | PDF ghép/tách/nén nhẹ (Python) | KillerPDF | root |
 | Học cách tự viết lại hệ thống từ đầu (compiler, database, git, docker, redis...) | build-your-own-x | root (README danh mục theo chủ đề, đa ngôn ngữ) |
+| An sao tử vi, đổi âm–dương lịch, can chi, giờ mặt trời thật | ziwei-doushu | `lib/ziwei/algorithm.ts`, `lib/ziwei/lunar-solar.ts`, `lib/ziwei/clock-adjust.ts` |
 | PDF app đầy đủ tính năng (edit, sign, OCR, convert, merge/split, API) | Stirling-PDF | `app/`, `docs/` |
 | PDF desktop app (Electron) giao diện tiếng Việt, xử lý offline | cit-pdf | `desktop/src/`, `src/` |
 | TTS tiếng Việt + voice cloning | VieNeu-TTS | `examples/`, `src/` |
@@ -89,6 +90,8 @@
 | claude-code-best-practice | `AI\claude-code-best-practice` | Tổng hợp best practice Claude Code — agents, commands, skills, hooks, MCP, settings, orchestration (Command→Agent→Skill), so sánh nhiều dev workflow (Superpowers, Spec Kit...); xem `best-practice/`, `implementation/`, `orchestration-workflow/`, `tips/` | claude code, agent, command, skill, hook, mcp, workflow, best practice |
 | agent-reach | `AI\agent-reach` | CLI cho agent đọc/search 15 nền tảng (Twitter, Reddit, YouTube, GitHub, Bilibili, 小红书, LinkedIn, RSS, web) — **KHÔNG phải wrapper**: nó chỉ cài tool upstream + `doctor` + SKILL.md dạy agent gọi CLI gốc. Học: probe thật thay vì `which()` (`probe.py`), backend list có thứ tự + fallback (`channels/base.py`), scrub secret ở output boundary (`utils/text.py`), atomic write chmod 600 chống symlink (`config.py`), contract test cho adapter (`tests/test_channel_contracts.py`). Cookie login = rủi ro khoá acc, xem SECURITY.md trước khi dùng thật | agent, cli, scraping, twitter, reddit, youtube, cookie, doctor, health check, probe, fallback, skill, mcp |
 | hermes-agent | `AI\hermes-agent` | Agent tự hành của NousResearch — bản upstream của Hermes đang chạy trên CT102. Giá trị chính: **`optional-skills/` 150 skill viết sẵn** (docker, ast-grep, grill-me, stocks, mlops, creative...) để bốc sang Hermes, và **cách dựng system prompt 3 tầng stable/context/volatile** (`agent/system_prompt.py`) — chỉ mục skill nằm đầu dải volatile để không phá prefix cache. Xem thêm `tools/` (memory frozen-snapshot, skills progressive disclosure) | agent, hermes, skill, system prompt, prompt cache, memory, cron, telegram |
+| codegraph | `AI\codegraph` | Code graph cho agent (TS + kernel Rust, SQLite/FTS5, MCP 1 tool `codegraph_explore`, tự sync). Chỉ tham khảo, CHƯA cài: telemetry mặc định bật, installer sửa `~/.claude.json` + `settings.json` + `CLAUDE.md`. Đọc `src/resolution/`, `src/mcp/tools.ts`, `docs/benchmarks/` | code graph, call graph, blast radius, tree-sitter, mcp, sqlite |
+| graphify | `AI\graphify` | Biến code + docs/PDF/ảnh/video thành knowledge graph (Python, NetworkX, Leiden), ra `graph.json` + `graph.html` + `GRAPH_REPORT.md`; cạnh gắn EXTRACTED/INFERRED. Chỉ tham khảo, CHƯA cài: installer thêm hook Bash/Grep/Read/Glob; docs đi qua LLM. Đọc `ARCHITECTURE.md`, `SECURITY.md`, `graphify/security.py` | knowledge graph, code graph, community, tree-sitter, networkx, obsidian |
 | OpenViking | `AI\OpenViking` | Context database cho agent (ByteDance/Volcengine). Rust core `crates/ragfs` = VFS thuần (plugin localfs/s3fs/memfs/kvfs/sqlfs/queuefs + git tự cài trên gitoxide + lock + AES-GCM) — **Apache-2.0**, sạch, đáng đọc/mượn. Não (L0/L1/L2, embedding, retrieval) nằm ở Python `openviking/retrieve`, `session`, `storage` — **AGPL-3.0**. Repo 0.4.x, đổi API nhanh. | context db, agent memory, rag, vfs, rust, ragfs, mcp |
 | everything-claude-code (ECC) | `AI\everything-claude-code` | **Không phải repo tham khảo — đây là bộ cài Claude Code.** Chạy `install.ps1` từ đây để cài theo profile/module thay vì bật plugin full (plugin full = 281 skill ≈ 18k token nạp mỗi phiên). Xem plan trước khi cài: `node scripts/install-plan.js --list-profiles` hoặc `--modules <ids>`. Cần `npm install` một lần. | ecc, install, profile, module, context, skill, token |
 | automaton | `AI\automaton` | Runtime TypeScript cho agent tự hành có ví (Conway Research): ReAct + heartbeat + SOUL.md, tự sửa code, sinh agent con. **"AI tự kiếm tiền" chỉ là prompt, không có cơ chế thu tiền.** Đáng học: treasury policy kiểm ngoài LLM (`src/types.ts` `DEFAULT_TREASURY_POLICY`), policy rule mỗi file (`src/agent/policy-rules/`), loop detector (`src/agent/loop-detector.ts`), hạ model theo ngân sách (`src/inference/router.ts`), memory nhiều lớp (`src/memory/`). Phân tích đầy đủ: `00.Claude\04.Docs\automaton-research.md`. Chỉ chạy thử trong CT cô lập, ví vài USD | agent, autonomous, policy engine, spend limit, treasury, loop detector, memory, x402, wallet, survival |
@@ -161,6 +164,7 @@
 |---|---|---|---|
 | build-your-own-x | `Reference\build-your-own-x` | Danh mục tutorial tự viết lại hệ thống thật từ đầu (compiler, database, git, docker, redis, web server, blockchain...) đa ngôn ngữ — tra khi cần hiểu cơ chế bên trong trước khi tự implement | tutorial, from scratch, compiler, database, git, docker, redis, learning |
 | rexapf-ui-study | `Reference\rexapf-ui-study` | Mổ xẻ giao diện landing page tối kiểu claude.com (rexapf.com, chụp 27/10/2026): token màu/chữ, hero aurora + glow theo chuột, chữ sáng theo cuộn, scrollytelling sticky, reveal + đếm số, kỷ luật hiệu năng/reduced-motion — copy từ `demo.html`, KHÔNG phải repo git (tự làm, không có trong repos.txt) | landing page, dark theme, scrollytelling, scroll animation, hero, css, vanilla js, ui reference |
+| ziwei-doushu | `Reference\ziwei-doushu` | Engine an sao Tử Vi Đẩu Số (TypeScript/Next.js, code MIT, dữ liệu CC-BY-4.0) theo hệ 倪海厦《天纪》: lập lá số, tứ hoá, cách cục, cổ thư. Lõi ở `lib/ziwei/` (`algorithm.ts`, `lunar-solar.ts` đổi âm–dương qua `lunar-javascript`, `clock-adjust.ts` giờ mặt trời thật, `dst-cn.ts` giờ mùa hè TQ, `patterns-*.ts`). Chỉ tham khảo, KHÔNG `npm install` (kéo cả Anthropic SDK/pg/redis); bộ dữ liệu giải đoán 56 GB tải riêng, không clone theo. Hợp tham khảo cho app Lịch Âm | tử vi, ziwei, lịch âm, lunar, can chi, tứ hoá, typescript |
 
 ## API
 
