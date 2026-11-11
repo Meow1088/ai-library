@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-11-09 — 67 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-11-11 — 69 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -14,6 +14,7 @@
 | State management Flutter | riverpod | `examples/` |
 | Animation Flutter | flutter_animate | `example/` |
 | Chart / biểu đồ | fl_chart | `example/` |
+| Chart nến trading trên web (TS) | tradecanvas (lõi, 0 deps, có thị trường VN), klinechart-ui-core (terminal React) | tradecanvas `packages/core/src/`, `packages/commons/`; klinechart `src/features/chart/` |
 | Kiến trúc app chuẩn (Compose) | nowinandroid | `feature/`, `core/` |
 | Multi-agent / workflow AI | langgraph, crewAI, autogen | `examples/` mỗi repo |
 | RAG / chain / retriever | langchain | `libs/langchain/`, `docs/` |
@@ -132,6 +133,8 @@
 | pandas-ta-classic | `Trading\pandas-ta-classic` | 250+ indicator kỹ thuật trên pandas (continuation của pandas-ta gốc đã gỡ) | indicator, rsi, macd, ta, pandas |
 | hummingbot | `Trading\hummingbot` | Bot market-making/arbitrage production-grade — connector sàn, strategy | market making, arbitrage, connector, strategy |
 | OctoBot | `Trading\OctoBot` | Bot trading crypto có Web UI — monorepo `packages/` (trading, evaluators, backtesting, tentacles = plugin strategy/indicator); có connector Polymarket (ký EIP712, neg-risk) ở `packages/tentacles/Trading/Exchange/polymarket`; app GPL-3.0, tentacles LGPL-3.0 | bot, crypto, web ui, tentacles, grid, dca, polymarket |
+| tradecanvas | `Trading	radecanvas` | Thư viện chart trading Canvas2D/WebGL, 0 deps, MIT — 18 loại chart, 134 indicator, 73 công cụ vẽ, adapter Binance/Bybit/…, lệnh kéo trên chart, replay/backtest; **có sẵn thị trường VN** (HOSE/HNX/UPCOM/VN30F, bước giá, trần/sàn, phiên — `packages/commons`); DataFeed riêng chỉ cần `getBars`+`subscribeBars` | chart, candlestick, indicator, webgl, vn market, hose, datafeed |
+| klinechart-ui-core | `Trading\klinechart-ui-core` | Terminal trading React 19 + Tailwind v4 trên KlineCharts v10 (Apache-2.0, tạo 10/11/2026, còn non) — toolbar, vẽ, VPVR/FRVP, R:R kéo SL/TP, watchlist/orderbook, i18n có `vi`; ~18 deps | react, terminal, klinecharts, volume profile, risk reward |
 
 ## Office
 
