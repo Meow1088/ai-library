@@ -16,6 +16,7 @@ Thư mục này là **thư viện tham khảo**, KHÔNG phải dự án. Không 
 ├── Content\        gen ảnh/video (ComfyUI...)
 ├── Audio\          TTS / speech (VieNeu-TTS...)
 ├── Reference\      danh mục tra cứu tổng quát (build-your-own-x...)
+├── Finance\        thu chi cá nhân, đọc mail giao dịch ngân hàng
 ├── repos.txt       manifest — danh sách repo (Category|URL)
 ├── clone.ps1       clone repo còn thiếu theo repos.txt (--depth 1)
 ├── update.ps1      git pull toàn bộ repo đã clone

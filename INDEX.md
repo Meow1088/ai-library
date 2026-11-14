@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-11-11 — 69 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-11-12 — 70 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -52,6 +52,8 @@
 | Pháp lý/thuế công ty một người VN, chuyển HKD lên công ty, bảng hiệu lực văn bản | opc-vn-business-law | `references/00-legal-status.md`, `references/06-conversion-playbook.md`, `assets/` |
 | Kho skill cho agent (150 skill đóng gói sẵn: devops, finance, research, creative, mlops...) | hermes-agent | `optional-skills/` theo nhóm |
 | Dựng app self-host sau Tailscale (sidecar, HTTPS MagicDNS, không bind IP tailnet cứng) | ScaleTail | `templates/service-template/`, `services/<app>/compose.yaml`, `documentation/standard-setup.md` |
+| Tách giao dịch thu/chi từ mail ngân hàng (regex theo ngân hàng khai trong JSON, phân loại theo từ khoá) | finitum | `src/parsers/regex.json`, `src/parsers/parser.py`, `src/parsers/base.py` |
+| Mẫu mail biến động số dư Timo (regex tăng/giảm, số dư, nội dung) + báo Telegram | Timo-Gmail-Tracker-GAS-Timo-Telegram, eWatcherBanking | `bot.js`, `app/main.py` |
 
 ## Flutter
 
@@ -102,6 +104,8 @@
 | archify | `AI\archify` | Agent skill vẽ diagram (Apache-2.0, v3.2): agent viết **JSON-IR** theo schema → `archify/bin/archify.mjs finalize` render ra 1 file HTML standalone tương tác (10 loại: architecture, workflow, sequence, dataflow, lifecycle, erd, class, tree, timeline, waterfall + explainer 1 trang). Node ≥18 thuần, **không cần npm install**; gate validate→deliver→check→browser-check (dùng Chrome máy). Test laptop 25/10: `doctor` OK, `finalize` sequence pass ~12s. Có update-check gọi `tt-a1i.github.io` — tắt bằng env `ARCHIFY_UPDATE_CHECK_DISABLED=1`. Đáng học: LLM viết IR có schema thay vì vẽ SVG trực tiếp, validator sinh sẵn, atomic delivery giữ bản tốt cuối (`bin/finalize.mjs`) | diagram, architecture, sequence, erd, mermaid, html, skill, visualization, explainer, json schema |
 | browsentic | `AI\browsentic` | Extension Chrome/Edge/Brave/Arc/Firefox + Bridge local (TypeScript, WXT, Apache-2.0): side panel trong trình duyệt **đang đăng nhập**, Bridge spawn agent CLI sẵn có (claude/codex/agy…) — không API key, không cloud; kiêm MCP server. 52 tool thao tác trang, approval gate, che credential, blocked sites. 1 maintainer, Windows experimental. Clone 27/10/2026 để **phát triển thêm** — muốn sửa code thì fork sang `Meow1088` và làm ngoài thư viện (thư viện không sửa repo con). Đáng học: `docs/internals/transport.md` (pairing), `docs/internals/guardrails.md`, `src/` | browser agent, chrome extension, side panel, mcp, claude code, codex, agy, wxt, typescript |
 | my-office | `AI\my-office` | Văn phòng 3D (Next.js 16 + three.js, MIT) cho các phiên Claude Code: mỗi phiên là một nhân vật ngồi bàn, đọc file thì đi thư viện, chạy lệnh thì vào phòng server; duyệt approval ngay trong văn phòng, xem RAM/dev server từng phiên. Port 4310, demo `npm run dev` → `/?demo` (không cần Claude Code). **Cảnh báo:** `bin/cli.mjs install` ghi hook + statusline vào `~/.claude/settings.json` (repo claude-config đồng bộ 3 máy, cấm path Windows) — cài thật thì phải xem diff settings trước. Clone 31/10/2026, dự định đưa vào PhongKeToan | claude code, hooks, 3d, three.js, nextjs, dashboard, session monitor, statusline |
+| van-phong-ao-3d | `AI\van-phong-ao-3d` | Văn phòng ảo 3D theo dõi phiên Claude Code + Codex (MIT, Node ≥18, 0 dependency npm; three.js 0.160 + addons tải từ CDN jsdelivr). Đáng đọc `public/index.html`: công thức cảnh đẹp mà nhẹ — `MeshStandardMaterial` + môi trường PMREM (`RoomEnvironment`) + tone mapping ACES + bóng mềm 2048, vân gỗ/thảm vẽ bằng canvas, robot capsule + đầu cầu + kính mắt phát sáng (`makeBot`), bàn 2 màn hình + ghế xoay (`makeDesk`), camera nhìn bao quát OrbitControls, nhãn CSS2D, màn hình lớn CSS3D. **Chỉ clone, KHÔNG cài:** `server.js` đọc `~/.claude` + `~/.codex`, có `execFile`; README bảo dán link cho agent tự cài và trỏ sang repo chủ khác (`vinaichatbot-rgb`). Đã dùng làm mẫu cho màn 3D PhongKeToan (12/11/2026) | 3d, three.js, văn phòng ảo, robot, PBR, canvas texture |
+| img2threejs | `AI\img2threejs` | Dựng lại vật trong MỘT ảnh mẫu thành mô hình Three.js viết thuần bằng code (Apache-2.0, skill v2.0.1 cho Claude Code/Codex): `SKILL.md` là file định tuyến, `forge/` là script Python stdlib (state → assessment → spec → build theo pass → chụp → so ảnh → review, tối đa 6 vòng sửa), `grimoire/` là sổ tay từng bước. Repo tự ước tính 80–180k token/món (`docs/TOKEN_COST.md`, chưa phải số đo). **Chỉ clone, KHÔNG cài:** cài chuẩn là `npx img2threejs install` (link skill vào `~/.claude/skills`); soát tĩnh 12/11/2026: `forge/` không gọi mạng, mạng chỉ ở `bin/`, `scripts/ci/`, `integrations/vision` (tải model MediaPipe). Plugin riêng `img2threejs/plugin-img2glb` (chưa clone) gọi Space Hugging Face `trellis-community/TRELLIS` ra file GLB — đo 12/11: 35 giây/món, 1,58 MB, 16.400 tam giác, hạn mức ẩn danh hết sau 1 lần gọi/ngày. Đang thử cho màn 3D PhongKeToan (12/11/2026) | image to 3d, three.js, procedural, glb, trellis, skill |
 
 ## Automation
 
@@ -174,6 +178,21 @@
 | Repo | Path | Dùng làm gì | Keyword |
 |---|---|---|---|
 | public-apis | `API\public-apis` | Danh mục API public miễn phí theo chủ đề | api, public, free, list |
+
+## Finance
+
+> Thêm 13/11/2026 cho dự án `03.Apk\01.Thu Chi`. Chỉ clone + soát tĩnh, CHƯA cài, chưa chạy. Ngoài Timo không repo nào có ngân hàng Việt Nam.
+
+| Repo | Path | Dùng làm gì | Keyword |
+|---|---|---|---|
+| finitum | `Finance\finitum` | Mail ngân hàng → chi tiêu/chuyển khoản (Python/FastAPI, MIT, ngân hàng Chile). Đáng lấy: luật tách khai trong `src/parsers/regex.json` (thêm ngân hàng = thêm khối JSON), engine `src/parsers/parser.py`, phân loại theo từ khoá chuẩn hoá NFKD `src/parsers/base.py`, chống trùng theo Message-ID `src/email_service/ingest.py`. Hạ tầng nặng (Postgres, Redis, Celery, Dash) — không bê. ⚠️ `infra/email-worker/wrangler.toml` ghi cứng `finitum.app` của tác giả | thu chi, expense, bank email, regex json, category, dedupe |
+| eWatcherBanking | `Finance\eWatcherBanking` | Poll IMAP đọc mail biến động số dư Timo để xác nhận nạp tiền (Python/Flask, không có file LICENSE). Đáng lấy: regex Timo trong `app/main.py`. Bẫy cần tránh: đánh dấu đã đọc TRƯỚC khi xử lý ⇒ lỗi giữa chừng mất thư; lưu Redis không bền; ghi cứng số tài khoản mặc định | timo, imap, biến động số dư, vietnam bank |
+| Timo-Gmail-Tracker-GAS-Timo-Telegram | `Finance\Timo-Gmail-Tracker-GAS-Timo-Telegram` | Google Apps Script: mail Timo → Google Sheets + Telegram (không có LICENSE). Đáng lấy: regex tăng/giảm/số dư/nội dung trong `bot.js`, ý gắn nhãn Gmail chống trùng. Bẫy: gắn nhãn cả thư không tách được, webhook không kiểm secret, token nằm trong URL | timo, apps script, telegram, google sheets, biến động số dư |
+| gmail-statement-fetcher | `Finance\gmail-statement-fetcher` | Tải PDF/ZIP sao kê từ Gmail qua IMAP (Python stdlib, MIT, ngân hàng Đài Loan) — KHÔNG tách giao dịch. Đáng lấy: thêm ngân hàng bằng `config.json`, chống trùng theo UID, chặn ZIP bomb trong `fetcher.py` | sao kê, statement, imap, pdf, config json |
+| sage | `Finance\sage` | Mail forward về mail server tự host → Postgres → Grafana (Python, MIT, ngân hàng Mỹ). Chỉ tham khảo schema `docker/db/init/2_init_schema.sql` (lưu thư thô tách riêng bảng giao dịch); hạ tầng quá nặng, không chống trùng thật | email, postgres, grafana, transaction schema |
+| firefly-iii | `Finance\firefly-iii` | Quản lý tài chính cá nhân tự host (PHP/Laravel, **AGPL-3**, clone 14/11/2026). Đáng đọc: ngân sách = `BudgetLimit` theo kỳ, 3 kiểu tự động RESET/ROLLOVER/ADJUSTED (`app/Enums/AutoBudgetType.php`); rollover chỉ cộng phần dư dương, âm thì về mức gốc (`app/Jobs/CreateAutoBudgetLimits.php:245-258`). Luật phân loại là dòng DB, chạy cả khi sửa giao dịch ⇒ có thể đè danh mục sửa tay (`app/TransactionRules/Actions/SetCategory.php`) | budget, rollover, rules, category, self-host, laravel |
+| actual | `Finance\actual` | Actual Budget (TS monorepo, MIT, 172 MB, clone 14/11/2026). Ngân sách kiểu phong bì: `leftover = budgeted + spent + carryover` (`packages/loot-core/src/server/budget/envelope.ts:57-62`), cờ carryover theo từng danh mục. Học luật từ sửa tay: đổi danh mục ⇒ tạo/sửa luật payee→danh mục (`packages/loot-core/src/server/transactions/transaction-rules.ts:969-1060`) | envelope budget, carryover, payee rule, learn category |
+| pckt | `Finance\pckt` | App Flutter ghi chi tiêu từ SMS + email ngân hàng, chạy trên máy (GPL-3, ngân hàng Ấn Độ, KHÔNG có ngân hàng VN, clone 14/11/2026). Đáng lấy nhất: sửa danh mục tay ⇒ khoá dòng `categoryLocked` + học luật merchant, áp lại chỉ cho dòng chưa khoá (`lib/data/db/database.dart:263-279`); chống trùng SMS↔email bằng điểm cộng dồn, mã tham chiếu trùng là quyết định (`lib/ingestion/dedup/dedup_engine.dart`); regex trước, LLM sau (`lib/ingestion/parser/sms_parser.dart`). ⚠️ có gọi mạng: LLM provider, IMAP/Gmail OAuth, tải model | sms, email, expense, dedupe, category lock, flutter, llm |
 
 ## Repo tắt trong repos.txt (bỏ `#` nếu cần rồi chạy clone.ps1/clone.sh)
 

@@ -95,3 +95,15 @@ API|https://github.com/public-apis/public-apis
 AI|https://github.com/diginno-net/opc-vn-business-law
 AI|https://github.com/colbymchenry/codegraph
 AI|https://github.com/Graphify-Labs/graphify
+AI|https://github.com/marketingjuliancongdanh79-pixel/van-phong-ao-3d
+AI|https://github.com/img2threejs/img2threejs
+
+# ---------- Finance (thu chi cá nhân, đọc mail giao dịch ngân hàng) ----------
+Finance|https://github.com/richardhapb/finitum
+Finance|https://github.com/katefike/sage
+Finance|https://github.com/notoriouslab/gmail-statement-fetcher
+Finance|https://github.com/vuisme/eWatcherBanking
+Finance|https://github.com/Proplasma/Timo-Gmail-Tracker-GAS-Timo-Telegram
+Finance|https://github.com/firefly-iii/firefly-iii
+Finance|https://github.com/actualbudget/actual
+Finance|https://github.com/pritam-ravani/pckt
