@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-11-11 — 69 repo / 11 category, clone --depth 1.
+> Cập nhật: 2026-11-14 — 73 repo / 11 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -88,6 +88,8 @@
 | openai-cookbook | `AI\openai-cookbook` | Recipe chính thức OpenAI API — 260 notebook theo chủ đề; xem `examples/` (lưu ý: repo sparse-checkout, xem ghi chú cuối file) | openai, gpt, recipe, notebook |
 | browser-use | `AI\browser-use` | Agent điều khiển browser bằng LLM (Playwright) — form, click, extract; xem `examples/` | browser agent, playwright, automation, llm |
 | crawl4ai | `AI\crawl4ai` | Crawler tối ưu cho LLM — output markdown sạch, extract có cấu trúc; xem `docs/` | crawl, scraping, markdown, extract |
+| firecrawl | `AI\firecrawl` | API crawl/scrape/search web cho agent (AGPL-3.0). Dùng qua cloud cần tài khoản + API key; tự host bằng `docker-compose.yaml` (7 service, API mặc định không xác thực, giới hạn container api 8G + playwright 4G); xem `SELF_HOST.md`, `skills/` (5 skill). Đã có crawl4ai chạy cục bộ miễn phí — đánh giá 14/11/2026: chưa cài | crawl, scrape, search, mcp, self-host, agpl |
+| last30days-skill | `AI\last30days-skill` | Skill Claude Code nghiên cứu một chủ đề trong 30 ngày gần nhất trên Reddit/HN/Polymarket/GitHub (không cần key), YouTube qua yt-dlp, X qua cookie Firefox hoặc API (MIT, Python ≥3.12, không hook, không telemetry); cài `/plugin marketplace add mvanhorn/last30days-skill`; xem `skills/last30days/SKILL.md`, `SECURITY.md`, `CONFIGURATION.md` | research, trend, reddit, hackernews, youtube, x, skill |
 | claude-code-best-practice | `AI\claude-code-best-practice` | Tổng hợp best practice Claude Code — agents, commands, skills, hooks, MCP, settings, orchestration (Command→Agent→Skill), so sánh nhiều dev workflow (Superpowers, Spec Kit...); xem `best-practice/`, `implementation/`, `orchestration-workflow/`, `tips/` | claude code, agent, command, skill, hook, mcp, workflow, best practice |
 | agent-reach | `AI\agent-reach` | CLI cho agent đọc/search 15 nền tảng (Twitter, Reddit, YouTube, GitHub, Bilibili, 小红书, LinkedIn, RSS, web) — **KHÔNG phải wrapper**: nó chỉ cài tool upstream + `doctor` + SKILL.md dạy agent gọi CLI gốc. Học: probe thật thay vì `which()` (`probe.py`), backend list có thứ tự + fallback (`channels/base.py`), scrub secret ở output boundary (`utils/text.py`), atomic write chmod 600 chống symlink (`config.py`), contract test cho adapter (`tests/test_channel_contracts.py`). Cookie login = rủi ro khoá acc, xem SECURITY.md trước khi dùng thật | agent, cli, scraping, twitter, reddit, youtube, cookie, doctor, health check, probe, fallback, skill, mcp |
 | hermes-agent | `AI\hermes-agent` | Agent tự hành của NousResearch — bản upstream của Hermes đang chạy trên CT102. Giá trị chính: **`optional-skills/` 150 skill viết sẵn** (docker, ast-grep, grill-me, stocks, mlops, creative...) để bốc sang Hermes, và **cách dựng system prompt 3 tầng stable/context/volatile** (`agent/system_prompt.py`) — chỉ mục skill nằm đầu dải volatile để không phá prefix cache. Xem thêm `tools/` (memory frozen-snapshot, skills progressive disclosure) | agent, hermes, skill, system prompt, prompt cache, memory, cron, telegram |
@@ -154,6 +156,8 @@
 |---|---|---|---|
 | ComfyUI | `Content\ComfyUI` | Workflow engine gen ảnh/video node-based — nền cho OneShot; xem `comfy/`, `comfy_extras/` | image, video, generation, workflow, node |
 | code-showreel | `Content\code-showreel` | Video 12s dựng 100% bằng code (numpy + pillow + ffmpeg): starfield, wireframe 3D, bình minh biển, title + HUD; nhạc tổng hợp bằng numpy; `check.py` kiểm keyframe/frame đen/nháy; kèm skill Claude Code quy trình duyệt khung → render → QA | video, intro, showreel, procedural, ffmpeg, numpy, synth, audio, skill |
+| hyperframes | `Content\hyperframes` | HeyGen HyperFrames 0.9.45 — viết HTML, render ra mp4 cục bộ, làm cho agent (Apache-2.0; Node ≥22 + ffmpeg + Chrome; không cần tài khoản để render local; telemetry BẬT mặc định → `npx hyperframes telemetry disable`); 9 skill; xem `skills/`, `docs/quickstart.mdx`, `docs/packages/cli.mdx`, `CREDITS.md` (GSAP + vài font có giấy phép riêng). Clone nặng 1,6 GB | video, html, render, motion, agent, skill, ffmpeg |
+| remotion | `Content\remotion` | Dựng video bằng React (giấy phép riêng: miễn phí cho cá nhân và công ty ≤3 người, lớn hơn phải mua Company License — xem `LICENSE.md`); 10 skill ở `packages/skills/skills/`; clone 896 MB | video, react, render, motion, skill |
 
 ## Audio
 

@@ -81,6 +81,8 @@ Office|https://github.com/Cuongyd196/cit-pdf
 # ---------- Content (gen ảnh/video — OneShot) ----------
 Content|https://github.com/comfyanonymous/ComfyUI
 Content|https://github.com/Meow1088/code-showreel
+Content|https://github.com/heygen-com/hyperframes
+Content|https://github.com/remotion-dev/remotion
 
 # ---------- Audio (TTS / speech) ----------
 Audio|https://github.com/pnnbao97/VieNeu-TTS
@@ -95,3 +97,5 @@ API|https://github.com/public-apis/public-apis
 AI|https://github.com/diginno-net/opc-vn-business-law
 AI|https://github.com/colbymchenry/codegraph
 AI|https://github.com/Graphify-Labs/graphify
+AI|https://github.com/mvanhorn/last30days-skill
+AI|https://github.com/firecrawl/firecrawl
