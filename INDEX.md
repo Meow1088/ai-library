@@ -1,3 +1,4 @@
+| phonebox | `Automation\phonebox` | Biến điện thoại Android cũ (7+) thành bàn điều khiển/màn phụ cho PC qua USB hoặc Wi-Fi: agent desktop .NET 10 (`agent/PhoneBox.Agent`) + app Android (`android/app`), 120 widget (CPU/GPU/RAM, hạn mức Claude/Codex, phiên Claude Code + duyệt Allow/Deny từ điện thoại, media, macro phím, Home Assistant, webhook), trình sửa layout trên web. Chỉ tham khảo, CHƯA cài, chưa soát telemetry; MIT | android, desk panel, stream deck, widget, system monitor, claude code, usb, adb, dotnet |
 # AI Library — INDEX
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
