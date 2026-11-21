@@ -105,6 +105,7 @@ AI|https://github.com/mvanhorn/last30days-skill
 AI|https://github.com/firecrawl/firecrawl
 AI|https://github.com/marketingjuliancongdanh79-pixel/van-phong-ao-3d
 AI|https://github.com/img2threejs/img2threejs
+AI|https://github.com/workaipvlinh-byte/van-phong-ai
 
 # ---------- Finance (thu chi cá nhân, đọc mail giao dịch ngân hàng) ----------
 Finance|https://github.com/richardhapb/finitum
