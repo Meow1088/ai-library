@@ -82,7 +82,8 @@ Tất cả clone `--depth 1` cho nhẹ. Chi tiết: [SETUP.md](SETUP.md)
 | `AGENTS.md` | Quy tắc AI tra thư viện (`CLAUDE.md` là stub trỏ sang) |
 | `CONVENTIONS.md` | Stack & pattern ưa chuộng — AI đọc trước khi chọn thư viện |
 | `clone.ps1` / `clone.sh` | Tải repo còn thiếu theo manifest, skip repo đã có |
-| `update.ps1` / `update.sh` | Pull toàn bộ theo manifest, báo repo lệch manifest, summary + exit code |
+| `update.ps1` / `update.sh` | Pull toàn bộ theo manifest, báo repo lệch manifest, summary + exit code; repo có commit mới → ghi nhật ký `_cap-nhat/yy-mm-dd.md` |
+| `_cap-nhat/` | Nhật ký mỗi lần update (file mới mỗi lần, không ghi đè). Script chỉ ghi log thô; phần "đáng chú ý" do agent viết thêm ở đầu file |
 
 ## Thêm repo mới
 
