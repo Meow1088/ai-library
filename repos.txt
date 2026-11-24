@@ -54,6 +54,7 @@ Automation|https://github.com/nusquama/n8nworkflows.xyz
 Automation|https://github.com/doanlong1412/snmp-topo-lan-card
 Automation|https://github.com/tailscale-dev/ScaleTail
 Automation|https://github.com/ersinkoc/phonebox
+Automation|https://github.com/nbtnvma/nvmapanel
 
 # ---------- Python ----------
 Python|https://github.com/fastapi/fastapi
