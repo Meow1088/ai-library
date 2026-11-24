@@ -1,4 +1,4 @@
-# Cập nhật (git pull) các repo theo manifest repos.txt — repos.txt là source of truth.
+﻿# Cập nhật (git pull) các repo theo manifest repos.txt — repos.txt là source of truth.
 # Repo có trên đĩa nhưng không nằm trong manifest sẽ chỉ bị cảnh báo, không pull.
 $Root = $PSScriptRoot
 [Console]::OutputEncoding = [Text.Encoding]::UTF8  # doc dung tieu de commit co dau / CJK tu git

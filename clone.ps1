@@ -1,4 +1,4 @@
-# Clone toàn bộ repo trong repos.txt vào thư mục category tương ứng.
+﻿# Clone toàn bộ repo trong repos.txt vào thư mục category tương ứng.
 # Repo đã tồn tại sẽ được skip. Clone --depth 1 để tiết kiệm dung lượng.
 $Root = $PSScriptRoot
 $ok = 0; $skip = 0; $fail = @()
