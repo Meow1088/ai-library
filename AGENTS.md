@@ -43,6 +43,10 @@ Khi làm việc ở bất kỳ dự án nào mà cần viết tính năng mới:
 2. Chạy `.\clone.ps1`.
 3. Thêm 1 dòng mô tả vào `INDEX.md` (path, dùng làm gì, keyword).
 
+`CHO-CLONE.txt` là hộp chờ: đại ka dán link repo vào đó bất cứ lúc nào. Khi được bảo "xử lý CHO-CLONE":
+làm 3 bước trên cho từng link (soi README/licence trước), xong thì xoá dòng khỏi hộp; link đã có trong
+`repos.txt` thì chỉ xoá dòng.
+
 ## Quy ước
 
 - Repo chỉ để đọc/tham khảo — mọi thay đổi code làm trong dự án thật (`02.Ai Bot`, `03.APP`...), không làm ở đây.

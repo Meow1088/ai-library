@@ -1,0 +1,5 @@
+# Hộp chờ clone — thấy repo hay thì dán link vào dưới dòng ---, mỗi dòng 1 link
+# (ghi chú thêm sau link cũng được). Bảo Claude "xử lý CHO-CLONE" là nó:
+# xem repo -> thêm vào repos.txt -> clone -> ghi INDEX.md -> xoá dòng ở đây.
+# Repo đã clone rồi thì chỉ xoá dòng.
+---
