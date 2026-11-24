@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-11-22 — 89 repo / 12 category, clone --depth 1.
+> Cập nhật: 2026-11-24 — 90 repo / 13 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -54,6 +54,7 @@
 | Dựng app self-host sau Tailscale (sidecar, HTTPS MagicDNS, không bind IP tailnet cứng) | ScaleTail | `templates/service-template/`, `services/<app>/compose.yaml`, `documentation/standard-setup.md` |
 | Tách giao dịch thu/chi từ mail ngân hàng (regex theo ngân hàng khai trong JSON, phân loại theo từ khoá) | finitum | `src/parsers/regex.json`, `src/parsers/parser.py`, `src/parsers/base.py` |
 | Mẫu mail biến động số dư Timo (regex tăng/giảm, số dư, nội dung) + báo Telegram | Timo-Gmail-Tracker-GAS-Timo-Telegram, eWatcherBanking | `bot.js`, `app/main.py` |
+| Giải mã ngược binary bằng AI (matching decompilation khớp từng byte) + cho agent điều khiển/test game | Yu-Gi-Oh-Forbidden-Memories-Recompiled | `notes/decompilation-workflow.md`, `notes/agent-control.md`, `notes/decompilation-plan.md` |
 
 ## Flutter
 
@@ -203,6 +204,12 @@
 | firefly-iii | `Finance\firefly-iii` | Quản lý tài chính cá nhân tự host (PHP/Laravel, **AGPL-3**, clone 14/11/2026). Đáng đọc: ngân sách = `BudgetLimit` theo kỳ, 3 kiểu tự động RESET/ROLLOVER/ADJUSTED (`app/Enums/AutoBudgetType.php`); rollover chỉ cộng phần dư dương, âm thì về mức gốc (`app/Jobs/CreateAutoBudgetLimits.php:245-258`). Luật phân loại là dòng DB, chạy cả khi sửa giao dịch ⇒ có thể đè danh mục sửa tay (`app/TransactionRules/Actions/SetCategory.php`) | budget, rollover, rules, category, self-host, laravel |
 | actual | `Finance\actual` | Actual Budget (TS monorepo, MIT, 172 MB, clone 14/11/2026). Ngân sách kiểu phong bì: `leftover = budgeted + spent + carryover` (`packages/loot-core/src/server/budget/envelope.ts:57-62`), cờ carryover theo từng danh mục. Học luật từ sửa tay: đổi danh mục ⇒ tạo/sửa luật payee→danh mục (`packages/loot-core/src/server/transactions/transaction-rules.ts:969-1060`) | envelope budget, carryover, payee rule, learn category |
 | pckt | `Finance\pckt` | App Flutter ghi chi tiêu từ SMS + email ngân hàng, chạy trên máy (GPL-3, ngân hàng Ấn Độ, KHÔNG có ngân hàng VN, clone 14/11/2026). Đáng lấy nhất: sửa danh mục tay ⇒ khoá dòng `categoryLocked` + học luật merchant, áp lại chỉ cho dòng chưa khoá (`lib/data/db/database.dart:263-279`); chống trùng SMS↔email bằng điểm cộng dồn, mã tham chiếu trùng là quyết định (`lib/ingestion/dedup/dedup_engine.dart`); regex trước, LLM sau (`lib/ingestion/parser/sms_parser.dart`). ⚠️ có gọi mạng: LLM provider, IMAP/Gmail OAuth, tải model | sms, email, expense, dedupe, category lock, flutter, llm |
+
+## Game
+
+| Repo | Path | Dùng làm gì | Keyword |
+|---|---|---|---|
+| Yu-Gi-Oh-Forbidden-Memories-Recompiled | `Game\Yu-Gi-Oh-Forbidden-Memories-Recompiled` | Game PS1 Yu-Gi-Oh! Forbidden Memories giải mã ngược (tay + AI, khớp từng byte bản gốc) rồi port native PC (C, Windows/Linux). Phần port **MIT**, game thuộc Konami, không kèm dữ liệu đĩa. Đáng đọc nhất là `notes/`: quy trình matching decompilation với agent (`decompilation-workflow.md`: giới hạn bộ nhớ, đọc đoạn hẹp, không chạy agent nền), cho agent điều khiển game từ Python + biến bug thành replay (`agent-control.md`), bản đồ symbol (`semantic-symbol-map.csv`); mod framework + FM Editor ở `tools/pc/fm_editor/`. Tham khảo cho CT109 `rea-lab`. Clone 65 MB (24/11/2026), chưa build | decompilation, reverse engineering, ps1, recompile, port, agent test, replay, mod, c |
 
 ## Repo tắt trong repos.txt (bỏ `#` nếu cần rồi chạy clone.ps1/clone.sh)
 

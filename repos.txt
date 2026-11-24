@@ -117,3 +117,6 @@ Finance|https://github.com/Proplasma/Timo-Gmail-Tracker-GAS-Timo-Telegram
 Finance|https://github.com/firefly-iii/firefly-iii
 Finance|https://github.com/actualbudget/actual
 Finance|https://github.com/pritam-ravani/pckt
+
+# ---------- Game (giải mã ngược / port game) ----------
+Game|https://github.com/krystalgamer/Yu-Gi-Oh-Forbidden-Memories-Recompiled

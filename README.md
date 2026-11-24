@@ -4,8 +4,8 @@
 
 **Thư viện repo tham khảo cho AI coding agent — tra trước, viết sau.**
 
-![Repos](https://img.shields.io/badge/repos-38-blue)
-![Categories](https://img.shields.io/badge/categories-8-purple)
+![Repos](https://img.shields.io/badge/repos-90-blue)
+![Categories](https://img.shields.io/badge/categories-13-purple)
 ![Clone](https://img.shields.io/badge/clone-‑‑depth%201-green)
 ![Agents](https://img.shields.io/badge/agents-Claude%20Code%20·%20Codex-orange)
 
@@ -53,6 +53,11 @@ Repo này chỉ chứa **cấu trúc** (manifest + script + docs). Các repo tha
 | 📈 **Trading** | freqtrade, ccxt, vectorbt, hummingbot, pandas-ta | Bot, backtest, kết nối sàn, indicator |
 | 📄 **Office** | markitdown, PyMuPDF, PaddleOCR, docling | PDF, convert tài liệu, OCR |
 | 🎨 **Content** | ComfyUI | Workflow gen ảnh/video |
+| 🔊 **Audio** | VieNeu-TTS | TTS tiếng Việt, voice cloning |
+| 📚 **Reference** | build-your-own-x, TablePro | Tra cứu tổng quát, hiểu cơ chế bên trong |
+| 🌐 **API** | public-apis | Tìm API public miễn phí |
+| 💰 **Finance** | finitum, actual, firefly-iii | Thu chi cá nhân, đọc mail ngân hàng |
+| 🎮 **Game** | Yu-Gi-Oh-Forbidden-Memories-Recompiled | Giải mã ngược + port game, agent điều khiển game |
 
 Danh mục đầy đủ kèm keyword để grep: **[INDEX.md](INDEX.md)**
 
