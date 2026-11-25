@@ -87,6 +87,7 @@ Content|https://github.com/comfyanonymous/ComfyUI
 Content|https://github.com/Meow1088/code-showreel
 Content|https://github.com/heygen-com/hyperframes
 Content|https://github.com/remotion-dev/remotion
+Content|https://github.com/jub0t/Concat
 
 # ---------- Audio (TTS / speech) ----------
 Audio|https://github.com/pnnbao97/VieNeu-TTS

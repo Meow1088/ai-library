@@ -2,7 +2,7 @@
 
 > Tra bảng này trước khi grep cả thư viện. Mỗi repo 1 dòng: path, dùng làm gì, keyword.
 > Khi thêm repo mới (qua `repos.txt` + `clone.ps1`/`clone.sh`), thêm 1 dòng vào đây.
-> Cập nhật: 2026-11-24 — 90 repo / 13 category, clone --depth 1.
+> Cập nhật: 2026-11-25 — 92 repo / 13 category, clone --depth 1.
 
 ## Tra theo nhu cầu
 
@@ -169,6 +169,7 @@
 | code-showreel | `Content\code-showreel` | Video 12s dựng 100% bằng code (numpy + pillow + ffmpeg): starfield, wireframe 3D, bình minh biển, title + HUD; nhạc tổng hợp bằng numpy; `check.py` kiểm keyframe/frame đen/nháy; kèm skill Claude Code quy trình duyệt khung → render → QA | video, intro, showreel, procedural, ffmpeg, numpy, synth, audio, skill |
 | hyperframes | `Content\hyperframes` | HeyGen HyperFrames 0.9.45 — viết HTML, render ra mp4 cục bộ, làm cho agent (Apache-2.0; Node ≥22 + ffmpeg + Chrome; không cần tài khoản để render local; telemetry BẬT mặc định → `npx hyperframes telemetry disable`); 9 skill; xem `skills/`, `docs/quickstart.mdx`, `docs/packages/cli.mdx`, `CREDITS.md` (GSAP + vài font có giấy phép riêng). Clone nặng 1,6 GB | video, html, render, motion, agent, skill, ffmpeg |
 | remotion | `Content\remotion` | Dựng video bằng React (giấy phép riêng: miễn phí cho cá nhân và công ty ≤3 người, lớn hơn phải mua Company License — xem `LICENSE.md`); 10 skill ở `packages/skills/skills/`; clone 896 MB | video, react, render, motion, skill |
+| Concat | `Content\Concat` | Trình dựng video desktop kiểu CapCut (Rust, AGPL-3.0, v0.2.12): phụ đề tự động, tách giọng, TTS, xoá nền, keyframe, xuất 4K; AI chạy cục bộ; có **MCP server sẵn** (`concat --mcp`, xem `docs/MCP.md`) + JSON-RPC để agent tự cắt video; `logs.rs` ghi rõ không gửi telemetry. Chỉ tham khảo, chưa cài; clone 130 MB | video, editor, capcut, caption, tts, mcp, rust, agent |
 
 ## Audio
 
