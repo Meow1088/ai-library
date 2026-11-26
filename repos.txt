@@ -96,6 +96,7 @@ Audio|https://github.com/pnnbao97/VieNeu-TTS
 Reference|https://github.com/codecrafters-io/build-your-own-x
 Reference|https://github.com/Renhuai123/ziwei-doushu
 Reference|https://github.com/TableProApp/TablePro
+Reference|https://github.com/XiaoYouChR/Ghost-Downloader-3
 AI|https://github.com/NousResearch/hermes-agent
 
 # ---------- API ----------
